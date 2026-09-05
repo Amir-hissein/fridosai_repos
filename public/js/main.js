@@ -320,22 +320,7 @@
         link.classList.toggle('active', isActive);
       });
 
-      if (active && active !== prevActiveSection) {
-        prevActiveSection = active;
-        const activePill = document.querySelector(`.sidebar-nav-list .sidebar-nav-link[href="#${active}"]`);
-        if (activePill && window.innerWidth <= 860) {
-          const list = activePill.closest('.sidebar-nav-list');
-          if (list) {
-            const pillLeft = activePill.offsetLeft;
-            const pillWidth = activePill.offsetWidth;
-            const listWidth = list.clientWidth;
-            list.scrollTo({
-              left: pillLeft - (listWidth / 2) + (pillWidth / 2),
-              behavior: 'smooth'
-            });
-          }
-        }
-      }
+
 
       ticking = false;
     }
