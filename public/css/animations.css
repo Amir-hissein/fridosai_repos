@@ -1,5 +1,13 @@
 /* ═══ ANIMATIONS — Scroll Reveal, Keyframes, Reduced Motion ═══════════ */
 
+@media (max-width: 768px) {
+  /* On mobile and tablet, convert horizontal slide reveals to vertical fade-up to eliminate horizontal page sway */
+  [data-reveal="fade-left"],
+  [data-reveal="fade-right"] {
+    transform: translateY(24px) !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal],
   [data-reveal-delay],

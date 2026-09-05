@@ -5,6 +5,9 @@ html {
   background-color: var(--bg);
   color-scheme: dark;
   scroll-padding-top: 88px; /* offset for sticky header */
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -14,8 +17,16 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+main, section, header, footer {
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 a {
