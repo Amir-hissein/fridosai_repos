@@ -1,0 +1,67 @@
+/* ═══ TOKENS — Design System Variables ════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   Fridos AI — State-of-the-Art Luxury Dark Design System
+   Harmonized Tokens, Uniform Radii, Glassmorphism, Micro-Animations
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --bg: #090C0B;
+  --bg-subtle: #0F1412;
+  --surface: #141A18;
+  --surface-card: #18201D;
+  --surface-elevated: #1F2A26;
+  --surface-glass: rgba(20, 26, 24, 0.75);
+  
+  /* Brand Accent: Aqua Turquoise */
+  --primary: #14B8A6;
+  --primary-hover: #0D9488;
+  --primary-glow: rgba(20, 184, 166, 0.35);
+  --primary-subtle: rgba(20, 184, 166, 0.12);
+  --primary-border: rgba(20, 184, 166, 0.3);
+  
+  /* Warm Accents */
+  --orange: #FF8A5C;
+  --orange-subtle: rgba(255, 138, 92, 0.15);
+  --gold: #F4B740;
+  --gold-dark: #E6A526;
+  --gold-subtle: rgba(244, 183, 64, 0.15);
+  --green: #10B981;
+  --green-subtle: rgba(16, 185, 129, 0.15);
+  
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: #9EABA5;
+  --text-muted: #64736D;
+  
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.04);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  
+  /* UNIFORM RADIUS TOKENS */
+  --radius-pill: 9999px;     /* For all buttons, chips, tags, pills */
+  --radius-sm: 10px;         /* For small icons, mini badges */
+  --radius-md: 16px;         /* For sub-cards, stat boxes */
+  --radius-lg: 24px;         /* For primary feature cards */
+  --radius-xl: 32px;         /* For large section containers */
+  --radius-phone: 42px;      /* For phone frames */
+  
+  /* Typography & Transitions */
+  --font: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-card: 0 20px 50px -10px rgba(0, 0, 0, 0.7);
+  --shadow-glow: 0 0 35px var(--primary-glow);
+}
+
+/* ── Reset & Base ── */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+

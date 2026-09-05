@@ -1,0 +1,800 @@
+/* ═══ RESPONSIVE — Mobile First Breakpoints (1100 → 360px) ════════════ */
+
+@media (max-width: 1100px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+/* 2 ── Tablet ≤ 1024px */
+@media (max-width: 1024px) {
+  .hamburger { display: flex; }
+  .nav-menu  { display: none; }
+  .btn-cta   { display: none; }
+  .lang-selector { display: none; }
+  .nav-row   { height: 68px; }
+
+  .hero-wrap {
+    grid-template-columns: 1fr;
+    padding: 65px 0 50px;
+    gap: 40px;
+    text-align: center;
+  }
+  .hero-left        { align-items: center; }
+  .store-row        { justify-content: center; }
+  .hero-status      { justify-content: center; }
+  .overline         { justify-content: center; }
+
+  /* Hero 3D Mockup Container on Tablet */
+  .mockup-container {
+    min-height: 660px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+  }
+  .mockup-left {
+    display: flex;
+    width: 270px;
+    height: 560px;
+    left: calc(50% - 250px);
+    top: 35px;
+    transform: perspective(1000px) rotateY(14deg) rotateZ(-3deg) scale(0.92);
+    opacity: 0.9;
+    z-index: 1;
+  }
+  .mockup-right {
+    display: flex;
+    width: 270px;
+    height: 560px;
+    right: calc(50% - 250px);
+    top: 35px;
+    transform: perspective(1000px) rotateY(-14deg) rotateZ(3deg) scale(0.92);
+    opacity: 0.9;
+    z-index: 1;
+  }
+  .mockup-center {
+    display: flex;
+    width: 310px;
+    height: 630px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    animation: floatCenter 6s ease-in-out infinite alternate;
+  }
+
+  /* Steps strip on Tablet */
+  .steps-strip {
+    padding: 34px 0;
+    margin: 24px 0 55px;
+  }
+
+  /* Section 01 — feature grid to single col */
+  .feature-01-wrap {
+    grid-template-columns: 1fr;
+    padding: 85px 0 80px;
+    gap: 48px;
+  }
+
+  /* Section 02 — header + body to single col */
+  .section-02-wrap {
+    padding: 85px 0 95px;
+    gap: 40px;
+  }
+  .sec-02-header {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .sec-02-body {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .recipe-swapper-stage { min-height: 380px; }
+
+  /* Section 03 — fridge card single col */
+  .fridge-feature-container {
+    padding: 45px 0 90px;
+  }
+  .fridge-big-card {
+    grid-template-columns: 1fr;
+    padding: 48px 32px;
+    gap: 44px;
+  }
+
+  /* Section 04 recipes */
+  .recipes-section-wrap {
+    padding: 85px 0 95px;
+    gap: 40px;
+  }
+  .recipes-header { grid-template-columns: 1fr; gap: 20px; }
+
+  /* Section 05 sprint */
+  .sprint-section-wrap {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 85px 0 95px;
+  }
+  .sprint-phone-container { justify-content: center; margin-bottom: 20px; }
+  .sprint-phone-card { width: 100%; max-width: 340px; }
+
+  /* Section 06 transparency */
+  .transparency-section-wrap {
+    padding: 45px 0 95px;
+  }
+  .transparency-card {
+    grid-template-columns: 1fr;
+    padding: 48px 32px;
+    gap: 44px;
+    text-align: center;
+  }
+  .transparency-content { align-items: center; }
+  .transparency-desc { max-width: 100%; text-align: left; }
+  .transparency-disclaimer-box { max-width: 100%; text-align: left; }
+  .ai-orbit-stage { margin: 0 auto; }
+
+  /* Section 07 CTA banner */
+  .cta-banner-wrap {
+    padding: 95px 20px 130px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 65px 0 35px;
+  }
+  .footer-top-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom-row { justify-content: center; text-align: center; }
+  .footer-brand-col { border-bottom: 1px solid var(--border-light); padding-bottom: 28px; }
+}
+
+/* 3 ── Phablet ≤ 768px */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+
+  /* Typography */
+  .hero-heading    { font-size: clamp(32px, 7.5vw, 44px); letter-spacing: -1px; }
+  .feat-heading    { font-size: clamp(26px, 6vw, 34px); letter-spacing: -0.8px; }
+  .sprint-heading  { font-size: clamp(28px, 7vw, 36px); }
+  .cta-banner-title { font-size: clamp(28px, 6vw, 36px); }
+
+  /* Hero */
+  .hero-wrap { padding: 50px 0 40px; gap: 36px; }
+  .hero-subtext { font-size: 16px; max-width: 100%; }
+
+  /* 3D Mockup Formation — Phablet: all 3 phones scaled down & spread */
+  .mockup-container {
+    min-height: 580px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+  }
+  .mockup-left {
+    display: flex;
+    width: 235px;
+    height: 490px;
+    left: calc(50% - 225px);
+    top: 35px;
+    transform: perspective(900px) rotateY(14deg) rotateZ(-3deg) scale(0.9);
+    opacity: 0.88;
+    z-index: 1;
+  }
+  .mockup-right {
+    display: flex;
+    width: 235px;
+    height: 490px;
+    right: calc(50% - 225px);
+    top: 35px;
+    transform: perspective(900px) rotateY(-14deg) rotateZ(3deg) scale(0.9);
+    opacity: 0.88;
+    z-index: 1;
+  }
+  .mockup-center {
+    display: flex;
+    width: 275px;
+    height: 560px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    animation: floatCenter 6s ease-in-out infinite alternate;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.92), 0 0 40px var(--primary-glow);
+  }
+
+  /* Steps: single col, compact */
+  .steps-strip { padding: 30px 0; margin: 20px 0 48px; }
+  .steps-grid { grid-template-columns: 1fr; gap: 6px; }
+  .step-item  { padding: 12px 10px; }
+
+  /* Section 01 - overline word-break */
+  .feature-01-wrap { padding: 75px 0 70px; gap: 40px; }
+  .overline { word-break: normal; flex-wrap: wrap; gap: 4px; }
+
+  /* Plate stage responsive */
+  .plate-stage { width: 260px; height: 260px; }
+  .hud-viewfinder { padding: 24px 18px; }
+
+  /* Section 02 recipe swap stage */
+  .section-02-wrap { padding: 75px 0 85px; gap: 36px; }
+  .recipe-swapper-stage { min-height: 340px; }
+  .recipe-swap-card { width: 280px; }
+
+  /* Section 03 fridge */
+  .fridge-feature-container { padding: 40px 0 80px; }
+  .fridge-flow-stage { flex-direction: column; align-items: center; }
+  .fridge-scanner-frame { width: 100%; max-width: 100%; height: 320px; }
+  .fridge-big-card { padding: 36px 20px; gap: 32px; }
+  .fridge-scan-header { font-size: 17px; }
+
+  /* Section 04 recipes — 2 cols */
+  .recipes-section-wrap { padding: 75px 0 85px; gap: 36px; }
+  .recipes-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .recipe-showcase-card { height: 280px; }
+
+  /* Section 05 benefits */
+  .sprint-section-wrap { padding: 75px 0 85px; gap: 40px; }
+  .benefits-grid-2x2 { grid-template-columns: 1fr; gap: 14px; }
+  .floating-streak-card { right: 4px; bottom: -8px; }
+
+  /* Section 06 transparency */
+  .transparency-section-wrap { padding: 40px 0 85px; }
+  .transparency-card { padding: 36px 20px; border-radius: 24px; gap: 36px; }
+  .transparency-heading { font-size: clamp(28px, 6vw, 36px); letter-spacing: -0.8px; }
+  .ai-orbit-stage { width: 300px; height: 300px; }
+  .orbit-ring-3   { width: 230px; height: 230px; }
+  .orbit-ring-2   { width: 162px; height: 162px; }
+  .orbit-ring-1   { width: 112px; height: 112px; }
+  .orbit-radar-sweep { width: 260px; height: 260px; }
+
+  /* CTA banner */
+  .cta-horizon-arc { width: 800px; height: 600px; bottom: -450px; }
+  .cta-banner-wrap { padding: 85px 18px 120px; }
+  .cta-icon-badge  { width: auto; height: auto; border-radius: 0; background: none; border: none; box-shadow: none; margin-bottom: 22px; }
+  .cta-icon-badge img { width: 68px; height: 68px; }
+
+  /* Footer */
+  .site-footer { padding: 55px 0 30px; }
+  .toc-list { grid-template-columns: 1fr; }
+  .footer-top-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-brand-col { border-bottom: 1px solid var(--border-light); padding-bottom: 24px; }
+  .footer-bottom-row { justify-content: center; text-align: center; }
+}
+
+/* 4 ── Mobile ≤ 480px — ROOMY SINGLE COLUMN WITH COMFORTABLE PACING */
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+
+  /* Typography — fluid scale */
+  .hero-heading    { font-size: clamp(28px, 8.5vw, 38px); letter-spacing: -0.8px; }
+  .feat-heading    { font-size: clamp(22px, 7vw, 30px); letter-spacing: -0.5px; }
+  .sprint-heading  { font-size: 26px; letter-spacing: -0.6px; }
+  .overline        { font-size: 10.5px; letter-spacing: 1.4px; justify-content: flex-start; }
+  .hero-subtext    { font-size: 15px; }
+  .cta-banner-title { font-size: 24px; letter-spacing: -0.8px; }
+
+  /* Navbar */
+  .nav-row   { height: 58px; }
+  .brand-icon { width: 34px; height: 34px; }
+  .brand-text { font-size: 16px; }
+
+  /* ── HERO ── */
+  .hero-wrap { padding: 36px 0 30px; gap: 32px; }
+  .store-row { gap: 10px; }
+  .store-btn { padding: 10px 18px; flex: 1; min-width: 140px; max-width: 200px; }
+
+  /* 3D Mockup Formation — Mobile: 3 cards scaled and centered */
+  .mockup-container {
+    min-height: 480px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+    margin-top: 10px;
+  }
+  .mockup-left {
+    display: flex;
+    width: 175px;
+    height: 365px;
+    left: calc(50% - 170px);
+    top: 35px;
+    transform: perspective(700px) rotateY(14deg) rotateZ(-3deg) scale(0.9);
+    opacity: 0.88;
+    z-index: 1;
+    border-radius: 24px;
+    border-width: 2.5px;
+  }
+  .mockup-right {
+    display: flex;
+    width: 175px;
+    height: 365px;
+    right: calc(50% - 170px);
+    top: 35px;
+    transform: perspective(700px) rotateY(-14deg) rotateZ(3deg) scale(0.9);
+    opacity: 0.88;
+    z-index: 1;
+    border-radius: 24px;
+    border-width: 2.5px;
+  }
+  .mockup-center {
+    display: flex;
+    width: 210px;
+    height: 435px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    border-radius: 28px;
+    border-width: 3px;
+    animation: floatCenter 6s ease-in-out infinite alternate;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95), 0 0 25px var(--primary-glow);
+  }
+
+  /* 3D Mockup Internal Scaling on Mobile */
+  .phone-status-bar { padding: 8px 12px 4px; font-size: 8.5px; }
+  .status-svg { width: 10px; height: 10px; }
+  .status-battery-pill { font-size: 7.5px; padding: 0 2px; }
+  
+  /* Left card internals */
+  .phone-home-header { padding: 4px 8px; }
+  .user-greeting-title { font-size: 10px; }
+  .home-date-btn { font-size: 7.5px; padding: 2px 5px; gap: 3px; }
+  .date-cal-svg { width: 9px; height: 9px; }
+  .home-meal-grid { gap: 4px; padding: 0 8px; margin-bottom: 4px; }
+  .meal-stat-card { padding: 4px; border-radius: 8px; gap: 2px; }
+  .meal-icon-circle { width: 18px; height: 18px; }
+  .meal-svg { width: 10px; height: 10px; }
+  .meal-stat-name { font-size: 8px; }
+  .meal-stat-val { font-size: 8px; }
+  .meal-cal-limit { font-size: 7px; }
+  .home-tracking-card { padding: 3px 6px; margin: 0 8px; border-radius: 10px; }
+  .tracking-row-item { padding: 3px 0; gap: 6px; }
+  .tracking-icon-circle { width: 18px; height: 18px; border-radius: 5px; }
+  .track-svg { width: 10px; height: 10px; }
+  .tracking-title { font-size: 7.5px; }
+  .tracking-sub { font-size: 6.5px; }
+  .tracking-arrow { width: 8px; height: 8px; }
+  .fridos-app-tabbar { height: 32px; padding: 0 6px; }
+  .tab-svg { width: 12px; height: 12px; }
+  .tab-text { font-size: 6px; }
+  .floating-scan-box { width: 24px; height: 24px; border-radius: 7px; }
+  .scan-svg { width: 12px; height: 12px; }
+
+  /* Center card internals */
+  .center-photo-wrap { height: 145px; }
+  .phone-photo-overlay-top { top: 32px; left: 10px; right: 10px; }
+  .photo-badge-btn { width: 24px; height: 24px; border-radius: 8px; }
+  .photo-nav-svg { width: 12px; height: 12px; }
+  .center-card-body { padding: 6px 10px 8px; }
+  .pancake-title { font-size: 11px; }
+  .pancake-time-badge { font-size: 8px; padding: 1px 6px; margin: 2px 0 5px; gap: 3px; }
+  .time-clock-svg { width: 9px; height: 9px; }
+  .pancake-macro-grid { gap: 4px; margin-bottom: 5px; }
+  .pancake-macro-card { padding: 4px 2px; border-radius: 8px; }
+  .macro-val-num { font-size: 8.5px; }
+  .macro-label-txt { font-size: 6.5px; }
+  .pancake-tabs-bar { margin-bottom: 5px; }
+  .pancake-tab-pill { font-size: 8px; padding: 3px 0; }
+  .pancake-ingredients-card { padding: 3px 6px; border-radius: 10px; }
+  .pancake-ing-row { font-size: 8px; padding: 2.5px 0; }
+  .ing-svg { width: 11px; height: 11px; }
+  .ing-name-txt { font-size: 8px; }
+  .ing-qty-txt { font-size: 7.5px; }
+  .pancake-action-bar { gap: 6px; padding-top: 4px; }
+  .add-to-meal-btn { font-size: 9.5px; padding: 6px 8px; border-radius: 9px; }
+  .share-meal-btn { width: 26px; height: 26px; border-radius: 8px; }
+  .share-svg { width: 12px; height: 12px; }
+
+  /* Right card internals */
+  .fridge-photo-wrap { height: 140px; margin: 0 8px 6px; border-radius: 10px; }
+  .phone-detect-pin { font-size: 7px; padding: 2px 5px; }
+  .phone-fridge-bracket { width: 12px; height: 12px; }
+
+  /* ── 3-STEP STRIP ── */
+  .steps-strip  { padding: 26px 0; margin: 16px 0 40px; }
+  .steps-grid   { gap: 0; }
+  .step-item    { padding: 14px 8px; gap: 14px; }
+  .step-num     { font-size: 13px; padding: 4px 9px; }
+  .step-title   { font-size: 15px; }
+  .step-desc    { font-size: 13px; }
+
+  /* ── SECTION 01: AI MEAL SCAN ── */
+  .feature-01-wrap { padding: 60px 0 65px; gap: 36px; }
+  .pills-row { gap: 8px; }
+  .feature-pill { padding: 7px 14px; font-size: 12.5px; }
+  .hud-viewfinder { padding: 20px 14px; border-radius: 20px; }
+  .plate-stage { width: 230px; height: 230px; }
+  .hud-bottom-bar { padding: 10px 16px; }
+  .hud-stat-val { font-size: 14px; }
+
+  /* AI chips — reposition so they don't overflow */
+  .chip-calorie { top: -18px; font-size: 13px; }
+  .chip-carbs   { left: -24px; font-size: 12px; padding: 6px 12px; }
+  .chip-protein { left: -30px; font-size: 12px; padding: 6px 12px; }
+  .chip-fat     { right: -24px; font-size: 12px; padding: 6px 12px; }
+
+  /* ── SECTION 02: PERSONALIZED ── */
+  .section-02-wrap   { padding: 60px 0 70px; gap: 32px; }
+  .sub-section-title { font-size: 20px; }
+  .recipe-swapper-stage { min-height: 320px; }
+  .recipe-swap-card  { width: 260px; }
+  .numbered-steps-list { gap: 16px; }
+  .step-circle { width: 32px; height: 32px; font-size: 13px; }
+  .num-step-title { font-size: 15px; }
+  .num-step-desc  { font-size: 13px; }
+
+  /* ── SECTION 03: FRIDGE ── */
+  .fridge-feature-container { padding: 32px 0 65px; }
+  .fridge-big-card { padding: 28px 16px; gap: 28px; border-radius: 22px; }
+  .fridge-scan-header { font-size: 15px; }
+  .fridge-scanner-frame { height: 240px; }
+  .recipe-result-card { border-radius: 14px; }
+  .recipe-result-img  { height: 110px; }
+  .recipe-result-title { font-size: 13px; }
+
+  /* ── SECTION 04: RECIPES GRID ── */
+  .recipes-section-wrap { padding: 60px 0 70px; gap: 32px; }
+  .recipes-grid-4 { grid-template-columns: 1fr; gap: 16px; }
+  .recipe-showcase-card { height: 240px; padding: 16px; }
+  .recipe-card-name { font-size: 15px; }
+  .recipe-card-macros { flex-wrap: wrap; gap: 6px; }
+  .recipe-card-content { padding: 12px 14px; }
+
+  /* ── SECTION 05: SPRINT ── */
+  .sprint-section-wrap { gap: 36px; padding: 55px 0 65px; }
+  .sprint-phone-card { max-width: 280px; border-radius: 34px; padding: 12px 12px 16px; }
+  .sprint-overline { font-size: 10.5px; letter-spacing: 1.8px; }
+  .sprint-subtext  { font-size: 14px; margin-bottom: 24px; }
+  .benefits-grid-2x2 { gap: 12px; }
+  .benefit-check-item { font-size: 14px; }
+  .floating-streak-card { right: -4px; bottom: -10px; padding: 6px 12px; }
+  .streak-big-num { font-size: 20px; }
+
+  /* ── SECTION 06: TRANSPARENCY ── */
+  .transparency-section-wrap { padding: 32px 0 65px; }
+  .transparency-card { padding: 32px 16px; border-radius: 22px; gap: 32px; }
+  .ai-orbit-stage  { width: 260px; height: 260px; }
+  .orbit-radar-sweep { width: 230px; height: 230px; }
+  .orbit-ring-3    { width: 200px; height: 200px; }
+  .orbit-ring-2    { width: 142px; height: 142px; }
+  .orbit-ring-1    { width: 98px;  height: 98px; }
+  .orbit-core-badge { width: 78px; height: 78px; }
+  .orbit-core-text  { font-size: 20px; }
+  .transparency-disclaimer-box { padding: 12px 14px; font-size: 12px; }
+
+  /* ── CTA BANNER ── */
+  .cta-horizon-arc { width: 440px; height: 340px; bottom: -260px; }
+  .cta-banner-wrap { padding: 70px 16px 95px; }
+  .cta-icon-badge  { width: auto; height: auto; border-radius: 0; background: none; border: none; box-shadow: none; margin-bottom: 18px; }
+  .cta-icon-badge img { width: 58px; height: 58px; }
+  .cta-banner-desc { font-size: 15px; margin-bottom: 28px; }
+
+  /* ── FOOTER ── */
+  .site-footer { padding: 50px 0 28px; }
+  .footer-lang-row { flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+  .footer-bottom-row { font-size: 12px; justify-content: center; text-align: center; }
+  .footer-brand-name { font-size: 20px; }
+  .footer-brand-logo { width: 44px; height: 44px; }
+  .footer-tagline    { font-size: 13.5px; }
+}
+
+/* ── Extra small (≤360px) ── */
+@media (max-width: 360px) {
+  .mockup-container { min-height: 390px; }
+  .mockup-left {
+    width: 140px;
+    height: 290px;
+    left: calc(50% - 110px);
+    top: 25px;
+    transform: perspective(500px) rotateY(12deg) rotateZ(-3deg) scale(0.84);
+    opacity: 0.72;
+    border-radius: 18px;
+  }
+  .mockup-right {
+    width: 140px;
+    height: 290px;
+    right: calc(50% - 110px);
+    top: 25px;
+    transform: perspective(500px) rotateY(-12deg) rotateZ(3deg) scale(0.84);
+    opacity: 0.72;
+    border-radius: 18px;
+  }
+  .mockup-center {
+    width: 175px;
+    height: 365px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 22px;
+  }
+  .store-btn { min-width: 120px; font-size: 12px; padding: 9px 14px; }
+  .plate-stage { width: 200px; height: 200px; }
+  .recipe-swap-card { width: 235px; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION 07: SCREENSHOT-MATCHING CTA BANNER WITH HORIZON ARC
+═══════════════════════════════════════════════════════════ */
+.cta-banner-wrap {
+  position: relative;
+  width: 100%;
+  padding: 120px 24px 170px;
+  text-align: center;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* The iconic horizon arc dome from the screenshot */
+.cta-horizon-arc {
+  position: absolute;
+  bottom: -680px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 900px;
+  border-radius: 50%;
+  border-top: 1.5px solid rgba(255, 255, 255, 0.16);
+  background: radial-gradient(50% 50% at 50% 0%, rgba(20, 184, 166, 0.06) 0%, transparent 75%);
+  pointer-events: none;
+  z-index: 1;
+  box-shadow: 0 -10px 40px rgba(20, 184, 166, 0.05);
+}
+
+.cta-banner-content {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* Squircle App Icon Badge with clean transparent glassmorphic styling */
+.cta-icon-badge {
+  width: auto;
+  height: auto;
+  margin: 0 auto 32px;
+  border-radius: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-icon-badge:hover {
+  transform: scale(1.08) translateY(-3px);
+}
+
+.cta-icon-badge img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+}
+
+.cta-banner-title {
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -2px;
+  line-height: 1.06;
+  margin-bottom: 18px;
+}
+
+.cta-banner-desc {
+  font-size: 17px;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.6;
+}
+
+.cta-store-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER (3-COLUMN LAYOUT MATCHING SCREENSHOT)
+═══════════════════════════════════════════════════════════ */
+.site-footer {
+  border-top: 1px solid var(--border-light);
+  padding: 80px 0 45px;
+  background: var(--bg);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  transition: opacity var(--transition-fast);
+}
+
+.footer-brand-link:hover {
+  opacity: 0.85;
+}
+
+.footer-brand-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.footer-brand-name {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.footer-tagline {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+.footer-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 18px;
+  letter-spacing: -0.2px;
+}
+
+.footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: inline-block;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-nav-link:hover {
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+.footer-lang-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.footer-lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 2px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.3px;
+}
+
+.footer-lang-btn:hover {
+  color: var(--text-primary);
+}
+
+.footer-lang-btn.active {
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.footer-divider-line {
+  height: 1px;
+  background: var(--border-light);
+  margin-bottom: 28px;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLL-REVEAL ANIMATION SYSTEM
+   Elements start invisible. JS adds .is-visible when in viewport.
+   All transitions use a premium cubic-bezier for silky feel.
+═══════════════════════════════════════════════════════════ */
+
+/* Base reveal state — hidden by default */
+[data-reveal] {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity  0.75s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Fade Up (default) ── */
+[data-reveal="fade-up"],
+[data-reveal] {
+  transform: translateY(32px);
+}
+
+/* ── Fade In (no translate) ── */
+[data-reveal="fade"] {
+  transform: translateY(0);
+}
+
+/* ── Slide from left ── */
+[data-reveal="slide-left"] {
+  transform: translateX(-40px);
+}
+
+/* ── Slide from right ── */
+[data-reveal="slide-right"] {
+  transform: translateX(40px);
+}
+
+/* ── Scale in ── */
+[data-reveal="scale"] {
+  transform: scale(0.92);
+}
+
+/* ── Visible state (JS adds this class) ── */
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Stagger delays (apply to children automatically) ── */
+[data-reveal-delay="100"] { transition-delay: 100ms; }
+[data-reveal-delay="200"] { transition-delay: 200ms; }
+[data-reveal-delay="300"] { transition-delay: 300ms; }
+[data-reveal-delay="400"] { transition-delay: 400ms; }
+[data-reveal-delay="500"] { transition-delay: 500ms; }
+[data-reveal-delay="600"] { transition-delay: 600ms; }
+
+/* ── Stagger group: auto-delay each direct child ── */
+[data-stagger-children] > *:nth-child(1) { transition-delay:  60ms; }
+[data-stagger-children] > *:nth-child(2) { transition-delay: 140ms; }
+[data-stagger-children] > *:nth-child(3) { transition-delay: 220ms; }
+[data-stagger-children] > *:nth-child(4) { transition-delay: 300ms; }
+[data-stagger-children] > *:nth-child(5) { transition-delay: 380ms; }
+[data-stagger-children] > *:nth-child(6) { transition-delay: 460ms; }
+
+/* ── Reduced motion: instantly show everything ── */

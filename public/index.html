@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title data-i18n="pageTitle">Fridos AI — Hedefine Özel Beslenme Planı</title>
+  <meta name="description" content="Öğününü tara, sana özel planını takip et, buzdolabındaki malzemeleri hedefinle uyumlu tariflere dönüştür.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/legal.css">
+  <link rel="icon" type="image/png" href="assets/icons/logo.png">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-row">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/icons/logo.png" alt="Fridos AI Logo" class="brand-icon">
+        <span class="brand-text">Fridos AI</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu" id="desktopNav">
+        <li><a href="#features" class="nav-link" data-i18n="nav.features">Özellikler</a></li>
+        <li><a href="#nasil-calisir" class="nav-link" data-i18n="nav.howItWorks">Nasıl çalışır?</a></li>
+        <li><a href="#tarifler" class="nav-link" data-i18n="nav.recipes">Tarifler</a></li>
+        <li><a href="#guven" class="nav-link" data-i18n="nav.trust">Güven</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="#download" class="btn-cta" data-i18n="nav.download">Hemen indir</a>
+
+        <!-- Hamburger toggle (mobile/tablet only) -->
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileDrawer">
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+          <span class="ham-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+  <!-- Mobile Slide-in Drawer -->
+  <nav class="mobile-drawer" id="mobileDrawer" role="navigation" aria-label="Mobil menü" aria-hidden="true">
+    <!-- Drawer Header -->
+    <div class="drawer-header">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/icons/logo.png" alt="Fridos AI" class="brand-icon" style="width:38px;height:38px;">
+        <span class="brand-text" style="font-size:18px;">Fridos AI</span>
+      </a>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Menüyü kapat">✕</button>
+    </div>
+
+    <!-- Nav links -->
+    <ul class="drawer-nav-list">
+      <li><a href="#features" class="drawer-nav-link" data-i18n="nav.features">Özellikler</a></li>
+      <li><a href="#nasil-calisir" class="drawer-nav-link" data-i18n="nav.howItWorks">Nasıl çalışır?</a></li>
+      <li><a href="#tarifler" class="drawer-nav-link" data-i18n="nav.recipes">Tarifler</a></li>
+      <li><a href="#guven" class="drawer-nav-link" data-i18n="nav.trust">Güven</a></li>
+    </ul>
+
+    <div class="drawer-divider"></div>
+
+    <!-- Legal links -->
+    <ul class="drawer-legal-list">
+      <li><a href="privacy.html" class="drawer-legal-link" data-i18n="footer.privacy">Gizlilik Politikası</a></li>
+      <li><a href="terms.html" class="drawer-legal-link" data-i18n="footer.terms">Kullanım Şartları</a></li>
+      <li><a href="delete-account.html" class="drawer-legal-link" data-i18n="footer.deleteAccount">Hesap Silme</a></li>
+    </ul>
+
+    <div class="drawer-divider"></div>
+
+    <!-- Lang switcher (mobile) -->
+    <div class="drawer-lang-row">
+      <button class="lang-btn active" data-lang="tr">TR</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+
+    <!-- CTA button -->
+    <a href="#download" class="drawer-cta-btn" data-i18n="nav.download">Ücretsiz İndir</a>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION (SCREENSHOT 1) -->
+    <section class="container hero-wrap" id="hero">
+      <!-- Left Column -->
+      <div class="hero-left" data-reveal="fade-left">
+        <div class="overline" data-i18n="hero.overline">KİŞİSEL BESLENMENİN YENİ HALİ</div>
+        <h1 class="hero-heading" data-i18n="hero.title" data-i18n-html="true">
+          Hedefine özel<br>
+          planın.<br>
+          Bir fotoğraf<br>
+          kadar yakın.
+        </h1>
+        <p class="hero-subtext" data-i18n="hero.desc">
+          Öğününü tara, sana özel planını takip et, buzdolabındaki malzemeleri hedefinle uyumlu tariflere dönüştür.
+        </p>
+
+        <!-- Store download badges -->
+        <div id="download" class="store-row">
+          <!-- Apple App Store -->
+          <a href="#" class="store-btn store-btn--apple" aria-label="Download on the App Store">
+            <svg class="store-svg-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.36 2.77M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="store-meta">
+              <div class="store-label" data-i18n="hero.storeSubApple">Şuradan indirin</div>
+              <div class="store-name">App Store</div>
+            </div>
+          </a>
+
+          <!-- Google Play -->
+          <a href="#" class="store-btn store-btn--google" aria-label="Get it on Google Play">
+            <svg class="store-svg-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.18 23.76c.31.17.67.2 1.01.09L15.54 12 12 8.46 3.18 23.76z" fill="#EA4335"/>
+              <path d="M20.47 10.18 17.6 8.55 13.71 12l3.89 3.45 2.87-1.63c.82-.47.82-1.17 0-1.64z" fill="#FBBC04"/>
+              <path d="M4.19.15C3.85.04 3.49.07 3.18.24L12 8.46l3.54-3.54L4.19.15z" fill="#4285F4"/>
+              <path d="M3.18.24C2.44.65 2 1.47 2 2.46v19.08c0 .99.44 1.81 1.18 2.22L12 15.54 3.18.24z" fill="#34A853"/>
+            </svg>
+            <div class="store-meta">
+              <div class="store-label" data-i18n="hero.storeSubGoogle">Şuradan edinin</div>
+              <div class="store-name">Google Play</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span data-i18n="hero.status">iOS ve Android'de kullanılabilir</span>
+        </div>
+      </div>
+
+      <!-- Right Column: 3D Phones Mockup Perspective -->
+      <div class="mockup-container">
+        <!-- Phone 1: Left (Fridos Mobile Home / Plan Screen - Matching Screenshot) -->
+        <div class="mockup-phone mockup-left">
+          <!-- iOS Status Bar with Vector Icons -->
+          <div class="phone-status-bar">
+            <span class="status-time">17:38</span>
+            <div class="status-bar-icons">
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="17" width="3" height="4" rx="0.5"/>
+                <rect x="7" y="13" width="3" height="8" rx="0.5"/>
+                <rect x="12" y="9" width="3" height="12" rx="0.5"/>
+                <rect x="17" y="5" width="3" height="16" rx="0.5"/>
+              </svg>
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.67 0 7.02 1.41 9.53 3.73L12 19.34 2.47 11.23C4.98 8.91 8.33 7.5 12 7.5z"/>
+              </svg>
+              <div class="status-battery-pill">
+                <span class="battery-pct">86</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Greeting & Date Picker -->
+          <div class="phone-home-header">
+            <div class="user-greeting-title" data-i18n="hero.userGreeting">Hi Amir</div>
+            <div class="home-date-btn">
+              <svg class="date-cal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+              <span data-i18n="hero.datePicker">30 August</span>
+              <svg class="chevron-down-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- 2x2 Meal Tracking Cards Grid -->
+          <div class="home-meal-grid">
+            <!-- Breakfast -->
+            <div class="meal-stat-card">
+              <div class="meal-stat-top">
+                <div class="meal-icon-circle meal-icon--breakfast">
+                  <svg class="meal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="4"/>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                  </svg>
+                </div>
+                <div class="meal-stat-name" data-i18n="hero.mealBreakfast">Breakfast</div>
+              </div>
+              <div class="meal-stat-val"><strong>0</strong> <span class="meal-cal-limit">/560 Kcal</span></div>
+              <div class="meal-progress-track"><div class="meal-progress-bar" style="width: 0%;"></div></div>
+            </div>
+
+            <!-- Lunch -->
+            <div class="meal-stat-card">
+              <div class="meal-stat-top">
+                <div class="meal-icon-circle meal-icon--lunch">
+                  <svg class="meal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="8.5"/>
+                    <path d="M8.5 7.5v4a1.5 1.5 0 0 0 1.5 1.5v4M15.5 7.5v9.5M13.5 7.5v3a1.5 1.5 0 0 0 2 0v-3"/>
+                  </svg>
+                </div>
+                <div class="meal-stat-name" data-i18n="hero.mealLunch">Lunch</div>
+              </div>
+              <div class="meal-stat-val"><strong>0</strong> <span class="meal-cal-limit">/653 Kcal</span></div>
+              <div class="meal-progress-track"><div class="meal-progress-bar" style="width: 0%;"></div></div>
+            </div>
+
+            <!-- Dinner -->
+            <div class="meal-stat-card">
+              <div class="meal-stat-top">
+                <div class="meal-icon-circle meal-icon--dinner">
+                  <svg class="meal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 18h18M4 16a8 8 0 0 1 16 0H4zm8-8V6M10 6h4"/>
+                  </svg>
+                </div>
+                <div class="meal-stat-name" data-i18n="hero.mealDinner">Dinner</div>
+              </div>
+              <div class="meal-stat-val"><strong>0</strong> <span class="meal-cal-limit">/467 Kcal</span></div>
+              <div class="meal-progress-track"><div class="meal-progress-bar" style="width: 0%;"></div></div>
+            </div>
+
+            <!-- Snack 1 -->
+            <div class="meal-stat-card">
+              <div class="meal-stat-top">
+                <div class="meal-icon-circle meal-icon--snack">
+                  <svg class="meal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 3h12l-2 18H8L6 3zm2 4h8"/>
+                  </svg>
+                </div>
+                <div class="meal-stat-name" data-i18n="hero.mealSnack">Snack 1</div>
+              </div>
+              <div class="meal-stat-val"><strong>0</strong> <span class="meal-cal-limit">/187 Kcal</span></div>
+              <div class="meal-progress-track"><div class="meal-progress-bar" style="width: 0%;"></div></div>
+            </div>
+          </div>
+
+          <!-- Activity & Health Tracking Card -->
+          <div class="home-tracking-card">
+            <!-- Water -->
+            <div class="tracking-row-item">
+              <div class="tracking-icon-circle tracking-icon--water">
+                <svg class="track-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                </svg>
+              </div>
+              <div class="tracking-meta">
+                <div class="tracking-title" data-i18n="hero.trackWater">Water Tracking</div>
+                <div class="tracking-sub" data-i18n="hero.trackWaterVal">0 ml / 2650 ml.</div>
+              </div>
+              <svg class="tracking-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+
+            <!-- Steps -->
+            <div class="tracking-row-item">
+              <div class="tracking-icon-circle tracking-icon--step">
+                <svg class="track-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="13" cy="4" r="2"/>
+                  <path d="m14.5 9-3 3-3-1-3 4M14 12l2 4 4 1M11 15l1 5"/>
+                </svg>
+              </div>
+              <div class="tracking-meta">
+                <div class="tracking-title" data-i18n="hero.trackStep">Step Tracking</div>
+                <div class="tracking-sub" data-i18n="hero.trackStepVal">0 steps / 2000 steps.</div>
+              </div>
+              <svg class="tracking-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+
+            <!-- Weight -->
+            <div class="tracking-row-item" style="border-bottom:none;">
+              <div class="tracking-icon-circle tracking-icon--weight">
+                <svg class="track-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="3" width="18" height="18" rx="4"/>
+                  <circle cx="12" cy="8.5" r="2.5"/>
+                  <line x1="12" y1="8.5" x2="13" y2="7.5"/>
+                </svg>
+              </div>
+              <div class="tracking-meta">
+                <div class="tracking-title" data-i18n="hero.trackWeight">Weight Tracking</div>
+                <div class="tracking-sub" data-i18n="hero.trackWeightVal">5.0 kg to your goal.</div>
+              </div>
+              <svg class="tracking-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Authentic App Bottom Tab Bar with Floating Center Scan Button -->
+          <div class="fridos-app-tabbar">
+            <div class="tab-btn active">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+              </svg>
+              <span class="tab-text">Plan</span>
+            </div>
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2l-4 4 4 4 4-4-4-4zM2 18l4-4 4 4-4 4-4-4zM8.5 8.5l7 7M3 3l18 18"/>
+              </svg>
+              <span class="tab-text">Recipes</span>
+            </div>
+            <div class="tab-btn-floating">
+              <div class="floating-scan-box">
+                <svg class="scan-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7V4a1 1 0 0 1 1-1h3M17 3h3a1 1 0 0 1 1 1v3M3 17v3a1 1 0 0 0 1 1h3M17 21h3a1 1 0 0 0 1-1v-3"/>
+                  <line x1="7" y1="12" x2="17" y2="12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+              </svg>
+              <span class="tab-text">Profile</span>
+            </div>
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+                <path d="M10 9L12 3l2 6-4 12"/>
+              </svg>
+              <span class="tab-text">Pro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 2: Center (Almond Power Pancake - Exact Screenshot Detail Screen) -->
+        <div class="mockup-phone mockup-center">
+          <!-- iOS Status Bar -->
+          <div class="phone-status-bar phone-status-bar--overlay">
+            <span class="status-time">17:39</span>
+            <div class="status-bar-icons">
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="17" width="3" height="4" rx="0.5"/>
+                <rect x="7" y="13" width="3" height="8" rx="0.5"/>
+                <rect x="12" y="9" width="3" height="12" rx="0.5"/>
+                <rect x="17" y="5" width="3" height="16" rx="0.5"/>
+              </svg>
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.67 0 7.02 1.41 9.53 3.73L12 19.34 2.47 11.23C4.98 8.91 8.33 7.5 12 7.5z"/>
+              </svg>
+              <div class="status-battery-pill">
+                <span class="battery-pct">86</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Large Recipe Image with Header Nav Buttons -->
+          <div class="center-photo-wrap">
+            <img src="assets/images/pancakes.jpg" alt="Almond Power Pancake" class="center-photo">
+            <div class="phone-photo-overlay-top">
+              <span class="photo-badge-btn" aria-label="Back">
+                <svg class="photo-nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="15 18 9 12 15 6"/>
+                </svg>
+              </span>
+              <span class="photo-badge-btn" aria-label="Bookmark">
+                <svg class="photo-nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="center-card-body">
+            <div class="pancake-title-row">
+              <h3 class="pancake-title" data-i18n="hero.pancakeTitle">Almond Power Pancake</h3>
+            </div>
+            
+            <div class="pancake-time-badge">
+              <svg class="time-clock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <span data-i18n="hero.pancakeTime">⏱ 20 min</span>
+            </div>
+
+            <!-- 4 Macro Rounded Cards Grid -->
+            <div class="pancake-macro-grid">
+              <div class="pancake-macro-card">
+                <div class="macro-mini-icon macro-icon--cal">
+                  <svg class="macro-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 23c-4.97 0-9-4.03-9-9 0-4.03 2.68-7.44 6.42-8.58-.28 1.13-.3 2.27-.04 3.39.26 1.12.87 2.14 1.76 2.92.35.31.78.53 1.25.64.47.11.95.1 1.41-.03.46-.13.88-.37 1.21-.7.33-.33.56-.75.67-1.21.11-.46.1-.94-.03-1.4-.13-.46-.37-.88-.7-1.21L12 4.5l1.04 1.04c2.8 2.8 4.36 6.55 4.36 10.46 0 3.86-3.14 7-7 7z"/>
+                  </svg>
+                </div>
+                <div class="macro-val"><strong>340</strong> <small>kcal</small></div>
+                <div class="macro-lbl" data-i18n="hero.calLabel">Calories</div>
+              </div>
+              <div class="pancake-macro-card">
+                <div class="macro-mini-icon macro-icon--pro">
+                  <svg class="macro-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 3a9 9 0 0 0-9 9c0 3.6 2.1 6.7 5.2 8.1l1.8-3.6c-.6-.4-1-.9-1.3-1.5H7v-2h2.2c.2-.7.6-1.3 1.1-1.8L8.6 9.5l1.4-1.4 1.7 1.7c.7-.5 1.5-.8 2.3-.8s1.6.3 2.3.8l1.7-1.7 1.4 1.4-1.7 1.7c.5.5.9 1.1 1.1 1.8H21v2h-1.7c-.3.6-.7 1.1-1.3 1.5l1.8 3.6c3.1-1.4 5.2-4.5 5.2-8.1a9 9 0 0 0-9-9z"/>
+                  </svg>
+                </div>
+                <div class="macro-val"><strong>16</strong> <small>g</small></div>
+                <div class="macro-lbl" data-i18n="hero.proLabel">Protein</div>
+              </div>
+              <div class="pancake-macro-card">
+                <div class="macro-mini-icon macro-icon--carb">
+                  <svg class="macro-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 4c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                  </svg>
+                </div>
+                <div class="macro-val"><strong>22</strong> <small>g</small></div>
+                <div class="macro-lbl" data-i18n="hero.carbLabel">Carbs</div>
+              </div>
+              <div class="pancake-macro-card">
+                <div class="macro-mini-icon macro-icon--fat">
+                  <svg class="macro-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                  </svg>
+                </div>
+                <div class="macro-val"><strong>20</strong> <small>g</small></div>
+                <div class="macro-lbl" data-i18n="hero.fatLabel">Fat</div>
+              </div>
+            </div>
+
+            <!-- Segmented Tabs: Ingredients, Preparation, Reviews -->
+            <div class="pancake-segmented-tabs">
+              <div class="pancake-tab-pill active" data-i18n="hero.tabIngredients">Ingredients</div>
+              <div class="pancake-tab-pill" data-i18n="hero.tabPreparation">Preparation</div>
+              <div class="pancake-tab-pill" data-i18n="hero.tabReviews">Reviews</div>
+            </div>
+
+            <!-- Ingredients Table Container with vector check & plus icons -->
+            <div class="pancake-ingredients-card">
+              <div class="pancake-ing-row">
+                <div class="ing-left">
+                  <svg class="ing-svg ing-svg--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <line x1="12" y1="8" x2="12" y2="16"/>
+                    <line x1="8" y1="12" x2="16" y2="12"/>
+                  </svg>
+                  <span class="ing-name-txt" data-i18n="hero.ingAlmondFlour">Badem Unu</span>
+                </div>
+                <span class="ing-qty-txt" data-i18n="hero.ingAlmondFlourQty">1 Su Bardağı</span>
+              </div>
+              <div class="pancake-ing-row">
+                <div class="ing-left">
+                  <svg class="ing-svg ing-svg--check" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="9" fill="rgba(20,184,166,0.2)" stroke="#14B8A6" stroke-width="1.8"/>
+                    <path d="M8 12l3 3 5-5" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="ing-name-txt" data-i18n="hero.ingEgg">Yumurta</span>
+                </div>
+                <span class="ing-qty-txt" data-i18n="hero.ingEggQty">2 Adet</span>
+              </div>
+              <div class="pancake-ing-row">
+                <div class="ing-left">
+                  <svg class="ing-svg ing-svg--plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="9"/>
+                    <line x1="12" y1="8" x2="12" y2="16"/>
+                    <line x1="8" y1="12" x2="16" y2="12"/>
+                  </svg>
+                  <span class="ing-name-txt" data-i18n="hero.ingRipeBanana">Olgun Muz</span>
+                </div>
+                <span class="ing-qty-txt" data-i18n="hero.ingRipeBananaQty">Yarım (Ezilmiş)</span>
+              </div>
+              <div class="pancake-ing-row">
+                <div class="ing-left">
+                  <svg class="ing-svg ing-svg--check" viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="9" fill="rgba(20,184,166,0.2)" stroke="#14B8A6" stroke-width="1.8"/>
+                    <path d="M8 12l3 3 5-5" fill="none" stroke="#14B8A6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  <span class="ing-name-txt" data-i18n="hero.ingAlmondMilk">Badem Sütü</span>
+                </div>
+                <span class="ing-qty-txt" data-i18n="hero.ingAlmondMilkQty">Yarım Su Bardağı</span>
+              </div>
+            </div>
+
+            <!-- Bottom Sticky Action Bar -->
+            <div class="pancake-action-bar">
+              <button class="add-to-meal-btn" data-i18n="hero.addMealBtn">+ Add to My Meal</button>
+              <button class="share-meal-btn" aria-label="Share">
+                <svg class="share-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 3: Right (Smart Fridge Scanner Screen) -->
+        <div class="mockup-phone mockup-right">
+          <!-- iOS Status Bar -->
+          <div class="phone-status-bar">
+            <span class="status-time">9:41</span>
+            <div class="status-bar-icons">
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="17" width="3" height="4" rx="0.5"/>
+                <rect x="7" y="13" width="3" height="8" rx="0.5"/>
+                <rect x="12" y="9" width="3" height="12" rx="0.5"/>
+                <rect x="17" y="5" width="3" height="16" rx="0.5"/>
+              </svg>
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.67 0 7.02 1.41 9.53 3.73L12 19.34 2.47 11.23C4.98 8.91 8.33 7.5 12 7.5z"/>
+              </svg>
+              <div class="status-battery-pill">
+                <span class="battery-pct">100</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="phone-app-header">
+            <div class="phone-header-title" data-i18n="hero.phone3Title" data-i18n-html="true">Akıllı Buzdolabı</div>
+            <div class="phone-date-badge phone-date-badge--green">3 Malzeme Algılandı</div>
+          </div>
+          
+          <div class="fridge-photo-wrap">
+            <img src="assets/images/fridge.jpg" alt="Fridge Interior" class="fridge-photo">
+            
+            <!-- Animated HUD Target Brackets -->
+            <div class="phone-fridge-bracket phone-fridge-tl"></div>
+            <div class="phone-fridge-bracket phone-fridge-tr"></div>
+            <div class="phone-fridge-bracket phone-fridge-bl"></div>
+            <div class="phone-fridge-bracket phone-fridge-br"></div>
+
+            <!-- Animated Radar Laser Scan Line -->
+            <div class="radar-scan-line"></div>
+
+            <!-- Detected Ingredient Floating Pins with SVG checkmarks -->
+            <div class="phone-detect-pin" style="top: 20%; left: 12%;">
+              <span>🥚 Yumurta</span> <span class="pin-check">✓</span>
+            </div>
+            <div class="phone-detect-pin" style="top: 45%; right: 10%;">
+              <span>🥛 Süt</span> <span class="pin-check">✓</span>
+            </div>
+            <div class="phone-detect-pin" style="bottom: 22%; left: 14%;">
+              <span>🐔 Tavuk</span> <span class="pin-check">✓</span>
+            </div>
+          </div>
+
+          <!-- Suggested Recipe Card from Fridge Scan -->
+          <div class="phone-fridge-recipe-card">
+            <div class="fridge-rec-header">
+              <span class="fridge-rec-tag">Önerilen Tarif</span>
+              <span class="fridge-rec-cal">550 kcal</span>
+            </div>
+            <div class="fridge-rec-name">Avokadolu Tost &amp; Fırın Patates</div>
+          </div>
+
+          <!-- Authentic App Bottom Tab Bar with Floating Center Scan Button -->
+          <div class="fridos-app-tabbar">
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
+              </svg>
+              <span class="tab-text">Plan</span>
+            </div>
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2l-4 4 4 4 4-4-4-4zM2 18l4-4 4 4-4 4-4-4zM8.5 8.5l7 7M3 3l18 18"/>
+              </svg>
+              <span class="tab-text">Recipes</span>
+            </div>
+            <div class="tab-btn-floating">
+              <div class="floating-scan-box">
+                <svg class="scan-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7V4a1 1 0 0 1 1-1h3M17 3h3a1 1 0 0 1 1 1v3M3 17v3a1 1 0 0 0 1 1h3M17 21h3a1 1 0 0 0 1-1v-3"/>
+                  <line x1="7" y1="12" x2="17" y2="12"/>
+                </svg>
+              </div>
+            </div>
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+              </svg>
+              <span class="tab-text">Profile</span>
+            </div>
+            <div class="tab-btn">
+              <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+                <path d="M10 9L12 3l2 6-4 12"/>
+              </svg>
+              <span class="tab-text">Pro</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3-STEP STRIP BAR -->
+    <section class="steps-strip">
+      <div class="container steps-grid" data-stagger-children>
+        <div class="step-item" data-reveal="fade-up">
+          <div class="step-num">01</div>
+          <div>
+            <div class="step-title" data-i18n="steps.s1_title">AI öğün analizi</div>
+            <div class="step-desc" data-i18n="steps.s1_desc">Fotoğrafından besin ve makro tahmini</div>
+          </div>
+        </div>
+
+        <div class="step-item" data-reveal="fade-up">
+          <div class="step-num">02</div>
+          <div>
+            <div class="step-title" data-i18n="steps.s2_title">Kişisel plan</div>
+            <div class="step-desc" data-i18n="steps.s2_desc">Hedefine ve yaşam tarzına göre</div>
+          </div>
+        </div>
+
+        <div class="step-item" data-reveal="fade-up">
+          <div class="step-num">03</div>
+          <div>
+            <div class="step-title" data-i18n="steps.s3_title">28 günlük odak</div>
+            <div class="step-desc" data-i18n="steps.s3_desc">İlerlemeni görünür kılan sprintler</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01: GÖR, ANLA, KAYDET (AI MEAL SCAN WITH ANIMATED LASER) -->
+    <section id="nasil-calisir" class="container feature-01-wrap" data-reveal="fade-up">
+      <!-- Left text -->
+      <div class="hero-left" data-reveal="slide-left">
+        <div class="overline" data-i18n="sec1.overline">01 · GÖR, ANLA, KAYDET</div>
+        <h2 class="feat-heading" data-i18n="sec1.title" data-i18n-html="true">
+          Tabağını<br>
+          göster. Gerisini<br>
+          Fridos AI<br>
+          düşünsün.
+        </h2>
+        <p class="hero-subtext" data-i18n="sec1.desc">
+          Kameranı aç, öğününün fotoğrafını çek. Fridos AI porsiyonları, içerikleri ve tahmini makroları anlaşılır bir özetle sunar; sen kontrol eder ve gününe eklersin.
+        </p>
+
+        <div class="pills-row">
+          <div class="feature-pill" data-i18n="sec1.pill1">Kalori tahmini</div>
+          <div class="feature-pill" data-i18n="sec1.pill2">Makro dağılımı</div>
+          <div class="feature-pill" data-i18n="sec1.pill3">Düzenlenebilir porsiyon</div>
+        </div>
+      </div>
+
+      <!-- Right HUD Viewfinder with Animated Scan Laser -->
+      <div class="hud-viewfinder">
+        <div class="bracket bracket-tl"></div>
+        <div class="bracket bracket-tr"></div>
+        <div class="bracket bracket-bl"></div>
+        <div class="bracket bracket-br"></div>
+
+        <!-- Full-Frame Animated Scan Laser traveling between corner brackets -->
+        <div class="hud-scan-beam"></div>
+        <div class="hud-scan-glow"></div>
+
+        <div class="plate-stage">
+          <div class="plate-circle-wrap">
+            <img src="assets/images/scanned_plate.jpg" alt="Healthy Gourmet Meal Dish" class="plate-img">
+          </div>
+
+          <!-- Floating AI Data Chips with Dynamic Counting -->
+          <div class="ai-chip chip-calorie" data-target="610">
+            <span class="chip-icon">🔥</span>
+            <span class="counter-val" data-target="610">0</span>&nbsp;<span class="chip-unit" data-i18n="sec1.chipCalorieUnit">kcal</span>
+          </div>
+          <div class="ai-chip chip-carbs" data-target="75">
+            <span class="chip-icon">🍞</span>
+            <span class="counter-val" data-target="75">0</span>g&nbsp;<span data-i18n="sec1.stat_carb">Karb</span>
+          </div>
+          <div class="ai-chip chip-protein" data-target="18">
+            <span class="chip-icon">🥩</span>
+            <span class="counter-val" data-target="18">0</span>g&nbsp;<span data-i18n="sec1.stat_pro">Protein</span>
+          </div>
+          <div class="ai-chip chip-fat" data-target="25">
+            <span class="chip-icon">🩸</span>
+            <span class="counter-val" data-target="25">0</span>g&nbsp;<span data-i18n="sec1.stat_fat">Yağ</span>
+          </div>
+        </div>
+
+        <div style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:20px;" data-i18n="sec1.tip">
+          En iyi çekim için öneri: Tabağı üst açıdan net ve aydınlık çekin.
+        </div>
+
+        <!-- Bottom stats bar with Dynamic Counting -->
+        <div class="hud-bottom-bar">
+          <div class="hud-stat">
+            <div class="hud-stat-label" data-i18n="sec1.stat_cal">Kcal</div>
+            <div class="hud-stat-val"><span class="counter-val" data-target="485">0</span></div>
+          </div>
+          <div class="hud-stat">
+            <div class="hud-stat-label" data-i18n="sec1.stat_pro">Protein</div>
+            <div class="hud-stat-val"><span class="counter-val" data-target="36">0</span>g</div>
+          </div>
+          <div class="hud-stat">
+            <div class="hud-stat-label" data-i18n="sec1.stat_carb">Karb</div>
+            <div class="hud-stat-val"><span class="counter-val" data-target="42">0</span>g</div>
+          </div>
+          <div class="hud-stat">
+            <div class="hud-stat-label" data-i18n="sec1.stat_fat">Yağ</div>
+            <div class="hud-stat-val"><span class="counter-val" data-target="19">0</span>g</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 02: GERÇEKTEN KİŞİSEL (PERSONALIZED RECIPES & SPRINTS) -->
+    <section id="features" class="container section-02-wrap">
+      <div class="sec-02-header" data-reveal="fade-up">
+        <div>
+          <div class="overline" data-i18n="sec2.overline">02 · GERÇEKTEN KİŞİSEL</div>
+          <h2 class="feat-heading" data-i18n="sec2.title" data-i18n-html="true">
+            Genel listeler değil,<br>
+            senin ritmin.
+          </h2>
+        </div>
+        <p class="hero-subtext" data-i18n="sec2.desc">
+          Hedefin, temel ölçümlerin, aktiviten ve beslenme tercihlerin bir araya gelir. Günlük kalori ve makro hedeflerin öğünlerine dağıtılır.
+        </p>
+      </div>
+
+      <div class="sub-section-title" data-i18n="sec2.subtitle">Sana Özel Öğün Tavsiyeleri</div>
+
+      <div class="sec-02-body">
+        <!-- Left: Floating Recipe Swap Showcase -->
+        <div class="recipe-swapper-stage" data-reveal="slide-left">
+          <!-- Background Card (Blur) -->
+          <div class="recipe-swap-card card-bg-blur">
+            <div class="recipe-card-img-wrap">
+              <img src="assets/images/pancakes.jpg" alt="Breakfast" class="recipe-card-img">
+              <div class="recipe-badge-row">
+                <span class="recipe-tag-pill" data-i18n="sec2.tagBreakfast">Kahvaltı</span>
+                <span class="bookmark-icon">🔖</span>
+              </div>
+            </div>
+            <div class="recipe-card-content">
+              <div class="recipe-card-title" data-i18n="sec2.recipe1Title">Fit Creamy Banana Pancake</div>
+              <div class="recipe-card-macros">
+                <span>🔥 310 kcal</span>
+                <span>🍞 35g</span>
+                <span>🥑 12g</span>
+                <span>🥩 18g</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Foreground Card (Active) -->
+          <div class="recipe-swap-card card-fg-active">
+            <div class="recipe-card-img-wrap">
+              <img src="assets/images/quinoa.jpg" alt="Quinoa Bowl" class="recipe-card-img">
+              <div class="recipe-badge-row">
+                <span class="recipe-tag-pill" data-i18n="sec2.tagLunch">Öğle Yemeği</span>
+                <span class="bookmark-icon">🔖</span>
+              </div>
+            </div>
+            <div class="recipe-card-content">
+              <div class="recipe-card-title" data-i18n="sec2.recipe2Title">Izgara Tavuklu Kuşkonmazlı Kinoa Kasesi</div>
+              <div class="recipe-card-macros">
+                <span style="color:#FF8A5C;">🔥 492 kcal</span>
+                <span style="color:#F4B740;">🍞 55g</span>
+                <span style="color:#38BDF8;">🥑 9g</span>
+                <span style="color:#14B8A6;">🥩 92g</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swap arrow button -->
+          <div class="swap-arrow-pill" onclick="window.swapRecipeCards()">
+            <span data-i18n="sec2.swapBtn">Değiştir ➔</span>
+          </div>
+        </div>
+
+        <!-- Right: 3 Numbered Steps -->
+        <div class="numbered-steps-list" data-reveal="slide-right" data-stagger-children>
+          <div class="numbered-step-row">
+            <div class="step-circle">1</div>
+            <div>
+              <div class="num-step-title" data-i18n="sec2.step1_title">Kişiselleştirilmiş hedefler</div>
+              <div class="num-step-desc" data-i18n="sec2.step1_desc">BMR ve günlük enerji ihtiyacına dayalı başlangıç noktası.</div>
+            </div>
+          </div>
+
+          <div class="numbered-step-row">
+            <div class="step-circle">2</div>
+            <div>
+              <div class="num-step-title" data-i18n="sec2.step2_title">Her öğün için yön</div>
+              <div class="num-step-desc" data-i18n="sec2.step2_desc">Kahvaltıdan atıştırmalığa dengeli günlük dağılım.</div>
+            </div>
+          </div>
+
+          <div class="numbered-step-row" style="border-bottom:none;">
+            <div class="step-circle">3</div>
+            <div>
+              <div class="num-step-title" data-i18n="sec2.step3_title">İlerlemeni yenile</div>
+              <div class="num-step-desc" data-i18n="sec2.step3_desc">28 günlük sprintlerle hedefini değerlendir ve güncelle.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 03: EVİNİZDEKİ MALZEMELERLE (FRIDGE SCAN & RECIPE BUILDER) -->
+    <section class="container fridge-feature-container">
+      <div class="fridge-big-card" data-reveal="fade-up">
+        <!-- Left text -->
+        <div class="hero-left" data-reveal="fade-left">
+          <div class="overline" data-i18n="sec3.overline">03 · EVİNİZDEKİ MALZEMELERLE</div>
+          <h2 class="feat-heading" data-i18n="sec3.title" data-i18n-html="true">
+            Buzdolabını aç.<br>
+            Akşam yemeğin<br>
+            orada.
+          </h2>
+          <p class="hero-subtext" data-i18n="sec3.desc">
+            Elindeki malzemeleri tara; beslenme tercihlerinle uyumlu tarif fikirlerini keşfet. Market listeni ve dijital buzdolabını aynı akışta yönet.
+          </p>
+        </div>
+
+        <!-- Right interactive flow -->
+        <div class="fridge-scan-interactive">
+          <div class="fridge-scan-header" data-i18n="sec3.header">
+            Buzdolabının Fotoğrafını Çek, Harika Tarifler Oluşturalım!
+          </div>
+
+          <div class="fridge-flow-stage">
+            <!-- Large Fridge Scanner Frame with full animated scan -->
+            <div class="fridge-scanner-frame">
+              <!-- HUD corner brackets -->
+              <div class="fridge-bracket fridge-tl"></div>
+              <div class="fridge-bracket fridge-tr"></div>
+              <div class="fridge-bracket fridge-bl"></div>
+              <div class="fridge-bracket fridge-br"></div>
+
+              <!-- Fridge photo -->
+              <img src="assets/images/fridge.jpg" alt="Fridge" class="fridge-full-img">
+
+              <!-- Animated horizontal laser scan line -->
+              <div class="fridge-laser-line"></div>
+              <!-- Glow cone below the laser -->
+              <div class="fridge-laser-glow"></div>
+
+              <!-- AI detection floating badges -->
+              <div class="fridge-detect-badge" style="top:18%;left:10%;" data-i18n="sec3.detectEgg">🥚 Yumurta ✓</div>
+              <div class="fridge-detect-badge" style="top:40%;right:8%;animation-delay:0.6s;" data-i18n="sec3.detectMilk">🥛 Süt ✓</div>
+              <div class="fridge-detect-badge" style="top:60%;left:8%;animation-delay:1.1s;" data-i18n="sec3.detectChicken">🐔 Tavuk ✓</div>
+              <div class="fridge-detect-badge" style="bottom:14%;right:10%;animation-delay:1.7s;" data-i18n="sec3.detectBroccoli">🥦 Brokoli ✓</div>
+
+              <!-- AI scanning status bar at bottom -->
+              <div class="fridge-status-bar">
+                <span class="fridge-status-dot"></span>
+                <span class="fridge-status-text" data-i18n="sec3.statusAnalyzing">Fridos AI analiz ediyor...</span>
+                <span class="fridge-recipe-count" data-i18n="sec3.readyTag">3 tarif hazır ➔</span>
+              </div>
+            </div>
+
+            <!-- Result Recipe Card -->
+            <div class="recipe-result-card">
+              <img src="assets/images/avocado_toast.jpg" alt="Avocado Toast" class="recipe-result-img">
+              <div class="recipe-result-body">
+                <div class="recipe-result-title" data-i18n="sec3.recipeTitle">Avokadolu Tost ve Fırın Patates Tabağı</div>
+                
+                <div class="recipe-result-macros">
+                  <span>🔥 550 kcal</span>
+                  <span>🥩 55g</span>
+                  <span>🥑 55g</span>
+                  <span>🍞 56g</span>
+                </div>
+
+                <!-- Ingredients table -->
+                <table class="ing-table">
+                  <tr>
+                    <td data-i18n="sec3.ing1_name">Tam Buğday Ekmeği</td>
+                    <td data-i18n="sec3.ing1_qty">1 büyük dilim (40g)</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sec3.ing2_name">Krem Peynir</td>
+                    <td data-i18n="sec3.ing2_qty">1 yemek kaşığı (15g)</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sec3.ing3_name">Avokado</td>
+                    <td data-i18n="sec3.ing3_qty">Yarım küçük avokado (50g)</td>
+                    <td>✓</td>
+                  </tr>
+                  <tr>
+                    <td data-i18n="sec3.ing4_name">Tatlı Patates</td>
+                    <td data-i18n="sec3.ing4_qty">1 küçük boy tatlı patates (100g)</td>
+                    <td>✓</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 04: RECIPES CAROUSEL GRID (HER GÜNE BAŞKA BİR FİKİR) -->
+    <section id="tarifler" class="container recipes-section-wrap">
+      <div class="recipes-header">
+        <div>
+          <div class="overline" data-i18n="sec4.overline">HER GÜNE BAŞKA BİR FİKİR</div>
+          <h2 class="feat-heading" data-i18n="sec4.title" data-i18n-html="true">
+            Hedefine uyan tarifler,<br>
+            canının çektiği tatlar.
+          </h2>
+        </div>
+        <p class="hero-subtext" data-i18n="sec4.desc">
+          Kahvaltı, ana öğün ve atıştırmalık seçeneklerini keşfet; sevdiklerini kaydet ve planına ekle.
+        </p>
+      </div>
+
+      <!-- 4 Cards Grid -->
+      <div class="recipes-grid-4" data-stagger-children>
+        <!-- Card 1 -->
+        <div class="recipe-showcase-card">
+          <img src="assets/images/halloumi.jpg" alt="Pratik kahvaltı" class="recipe-bg-img">
+          <div class="recipe-gradient-overlay"></div>
+          <div class="recipe-card-meta">
+            <div>
+              <div class="recipe-card-index">01</div>
+              <div class="recipe-card-name" data-i18n="sec4.r1">Pratik kahvaltı</div>
+            </div>
+            <div class="recipe-circle-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="recipe-showcase-card">
+          <img src="assets/images/kebab.jpg" alt="Hafif akşam" class="recipe-bg-img">
+          <div class="recipe-gradient-overlay"></div>
+          <div class="recipe-card-meta">
+            <div>
+              <div class="recipe-card-index">02</div>
+              <div class="recipe-card-name" data-i18n="sec4.r2">Hafif akşam</div>
+            </div>
+            <div class="recipe-circle-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="recipe-showcase-card">
+          <img src="assets/images/beef_rice.jpg" alt="İş yemeği" class="recipe-bg-img">
+          <div class="recipe-gradient-overlay"></div>
+          <div class="recipe-card-meta">
+            <div>
+              <div class="recipe-card-index">03</div>
+              <div class="recipe-card-name" data-i18n="sec4.r3">İş yemeği</div>
+            </div>
+            <div class="recipe-circle-arrow">↗</div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="recipe-showcase-card">
+          <img src="assets/images/chickpea.jpg" alt="100 kalori altı" class="recipe-bg-img">
+          <div class="recipe-gradient-overlay"></div>
+          <div class="recipe-card-meta">
+            <div>
+              <div class="recipe-card-index">04</div>
+              <div class="recipe-card-name" data-i18n="sec4.r4">100 kalori altı</div>
+            </div>
+            <div class="recipe-circle-arrow">↗</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: SPRINT & HABIT TRACKER (MATCHING SCREENSHOT) -->
+    <section class="container sprint-section-wrap">
+      <!-- Left: Sprint Phone Mockup -->
+      <div class="sprint-phone-container" data-reveal="slide-left">
+        <div class="sprint-phone-card">
+          <!-- Status Bar with Safe Area -->
+          <div class="phone-status-bar sprint-status-bar">
+            <span>9:41</span>
+            <div class="status-bar-icons">
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="2" y="17" width="3" height="4" rx="0.5"/>
+                <rect x="7" y="13" width="3" height="8" rx="0.5"/>
+                <rect x="12" y="9" width="3" height="12" rx="0.5"/>
+                <rect x="17" y="5" width="3" height="16" rx="0.5"/>
+              </svg>
+              <svg class="status-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4zm0 3.5c3.67 0 7.02 1.41 9.53 3.73L12 19.34 2.47 11.23C4.98 8.91 8.33 7.5 12 7.5z"/>
+              </svg>
+              <div class="status-battery-pill">
+                <span class="battery-pct">86</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Header -->
+          <div class="sprint-phone-header">
+            <svg class="phone-back-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            <span data-i18n="sec5.phoneTitle">Sprint Özeti</span>
+          </div>
+
+          <!-- Top Summary Card (Sprint tamamlandı!) -->
+          <div class="sprint-completed-banner">
+            <div>
+              <div class="sprint-banner-title" data-i18n="sec5.sprintDone">Sprint tamamlandı!</div>
+              <div class="sprint-banner-sub">
+                <span class="sprint-sub-label">Bu Sprintte</span>
+                <span class="sprint-sub-val">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg>
+                  <strong>5.9 kg</strong> kaydedildi
+                </span>
+              </div>
+            </div>
+            <!-- Progress Ring with Percentage -->
+            <div class="sprint-progress-circle-wrap">
+              <svg class="progress-ring-svg" viewBox="0 0 44 44">
+                <circle cx="22" cy="22" r="17" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="3"/>
+                <circle cx="22" cy="22" r="17" fill="none" stroke="#10B981" stroke-width="3.5" stroke-dasharray="107" stroke-dashoffset="44" stroke-linecap="round" transform="rotate(-90 22 22)"/>
+              </svg>
+              <span class="progress-pct-txt">%59</span>
+            </div>
+          </div>
+
+          <!-- Sprint 1 Details Card -->
+          <div class="sprint-meta-card">
+            <div class="sprint-meta-row">
+              <div>
+                <div class="sprint-meta-title">Sprint 1</div>
+                <div class="sprint-meta-date">28.05.2026 - 25.06.2026</div>
+              </div>
+              <span class="sprint-badge-done" data-i18n="sec5.sprintStatus">● Tamamlandı</span>
+            </div>
+
+            <div class="sprint-weight-stats">
+              <div class="sprint-stat-col">
+                <div class="sprint-stat-label">Başlangıç Kilosu</div>
+                <div class="sprint-stat-val">90.0 <span>kg</span></div>
+              </div>
+              <div class="sprint-stat-col sprint-stat-col--right">
+                <div class="sprint-stat-label">Hedef Kilo</div>
+                <div class="sprint-stat-val">80.0 <span>kg</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Weight Curve Chart Box -->
+          <div class="sprint-chart-box">
+            <div class="chart-top-tag">90 kg</div>
+            
+            <svg class="chart-svg" viewBox="0 0 280 85" fill="none">
+              <defs>
+                <linearGradient id="sprintCurveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#14B8A6"/>
+                  <stop offset="100%" stop-color="#10B981"/>
+                </linearGradient>
+              </defs>
+              <!-- Smooth weight loss bezier curve -->
+              <path d="M 18 16 C 50 22, 110 72, 215 70" stroke="url(#sprintCurveGrad)" stroke-width="3" stroke-linecap="round"/>
+              <!-- Start Dot -->
+              <circle cx="18" cy="16" r="4.5" fill="#FFFFFF" stroke="#64748B" stroke-width="1.5"/>
+              <!-- End Dot with Check -->
+              <circle cx="215" cy="70" r="7.5" fill="#10B981"/>
+              <path d="M 212 70 L 214.5 72.5 L 218.5 67.5" stroke="#0E1412" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <!-- End weight badge -->
+            <div class="chart-end-badge">84.1 kg</div>
+
+            <!-- Date Axis -->
+            <div class="chart-date-row">
+              <span>28 Mayıs</span>
+              <span>25 Haziran</span>
+            </div>
+          </div>
+
+          <!-- Floating Streak Card matching screenshot -->
+          <div class="floating-streak-card">
+            <span class="streak-big-num">7</span>
+            <span class="streak-text-label">günlük<br>seri</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Text & 2x2 Checked Benefits List -->
+      <div class="sprint-text-col" data-reveal="slide-right">
+        <div class="sprint-overline" data-i18n="sec5.overline">MOTİVASYON, GÖRÜNÜR OLDUĞUNDA BÜYÜR</div>
+        <h2 class="sprint-heading" data-i18n="sec5.title" data-i18n-html="true">
+          Küçük seçimleri<br>
+          güçlü bir seriye<br>
+          dönüştür.
+        </h2>
+        <p class="sprint-subtext" data-i18n="sec5.desc">
+          Su, adım ve öğün kayıtlarını takip et. Fridos Puanı görevleri ve 28 günlük hedef döngüsüyle düzenini koru.
+        </p>
+
+        <!-- 2x2 Checked Benefits Grid -->
+        <div class="benefits-grid-2x2">
+          <div class="benefit-check-item">
+            <div class="check-icon-circle">✓</div>
+            <span data-i18n="sec5.b1">Günlük görevler</span>
+          </div>
+
+          <div class="benefit-check-item">
+            <div class="check-icon-circle">✓</div>
+            <span data-i18n="sec5.b2">Haftalık seri</span>
+          </div>
+
+          <div class="benefit-check-item">
+            <div class="check-icon-circle">✓</div>
+            <span data-i18n="sec5.b3">Hedef geçmişi</span>
+          </div>
+
+          <div class="benefit-check-item">
+            <div class="check-icon-circle">✓</div>
+            <span data-i18n="sec5.b4">Apple Health desteği</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 06: ŞEFFAF YAKLAŞIM / GÜVEN (MATCHING SCREENSHOT DESIGN) -->
+    <section id="guven" class="container transparency-section-wrap">
+      <div class="transparency-card" data-reveal="fade-up">
+
+        <!-- Left: Concentric AI Orbit Graphics with Fridos AI Theme Animations -->
+        <div class="ai-orbit-stage" data-reveal="scale" data-reveal-delay="200">
+          <!-- Rotating Radar Sweep Beam -->
+          <div class="orbit-radar-sweep"></div>
+
+          <!-- Large outer orbital arc -->
+          <div class="orbit-arc-outer"></div>
+          
+          <!-- Concentric animated rings with orbiting detected elements -->
+          <div class="orbit-ring-3">
+            <div class="orbit-pill pill-n" data-i18n="sec6.orbitBmr">🧬 BMR</div>
+            <div class="orbit-pill pill-e" data-i18n="sec6.orbitMacro">📊 Makro</div>
+            <div class="orbit-pill pill-s" data-i18n="sec6.orbitHydration">💧 Hidrasyon</div>
+            <div class="orbit-pill pill-w" data-i18n="sec6.orbitActivity">🏃 Aktivite</div>
+          </div>
+          <div class="orbit-ring-2">
+            <span class="orbit-node node-1"></span>
+            <span class="orbit-node node-2"></span>
+          </div>
+          <div class="orbit-ring-1"></div>
+          
+          <!-- Center AI Badge with breathing double ring border -->
+          <div class="orbit-core-badge">
+            <span class="orbit-core-text">AI</span>
+            <div class="core-glow-pulse"></div>
+          </div>
+        </div>
+
+        <!-- Right: Text, Overline, Heading & Info Disclaimer matching screenshot -->
+        <div class="transparency-content">
+          <div class="transparency-overline">
+            <span class="overline-line">—</span>
+            <span data-i18n="sec6.overline">ŞEFFAF YAKLAŞIM</span>
+          </div>
+
+          <h2 class="transparency-heading" data-i18n="sec6.title" data-i18n-html="true">
+            Bilgiyle yönlendirir,<br>
+            kararı sana bırakır.
+          </h2>
+
+          <p class="transparency-desc" data-i18n="sec6.desc">
+            Planlama yaklaşımı enerji ihtiyacı ve makro dağılımı gibi kabul gören hesaplama temellerinden yararlanır. Tahminleri her zaman kontrol edebilir ve düzenleyebilirsin.
+          </p>
+
+          <!-- Disclaimer info box matching screenshot -->
+          <div class="transparency-disclaimer-box">
+            <svg class="disclaimer-info-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span data-i18n="sec6.disclaimer">Fridos AI genel bilgi ve eğitim amaçlıdır; tıbbi tanı, tedavi veya profesyonel sağlık tavsiyesinin yerine geçmez.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 07: FINAL CTA BANNER (MATCHING SCREENSHOT) -->
+    <section class="cta-banner-wrap">
+      <!-- Horizon dome arc line -->
+      <div class="cta-horizon-arc"></div>
+
+      <div class="container cta-banner-content" data-reveal="fade-up">
+        <!-- Squircle App Icon Badge -->
+        <div class="cta-icon-badge" data-reveal="scale" data-reveal-delay="100">
+          <img src="assets/icons/logo.png" alt="Fridos AI Icon">
+        </div>
+
+        <h2 class="cta-banner-title" data-i18n="sec7.title">Bugün tabağından başla.</h2>
+        <p class="cta-banner-desc" data-i18n="sec7.desc">
+          Hedefine giden yolu sadeleştir. Fridos AI'yı ücretsiz indir ve kişisel planını oluştur.
+        </p>
+
+        <!-- Store download badges -->
+        <div class="store-row cta-store-row">
+          <!-- Apple App Store -->
+          <a href="#" class="store-btn store-btn--apple" aria-label="Download on the App Store">
+            <svg class="store-svg-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98l-.09.06c-.22.15-2.19 1.28-2.17 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.36 2.77M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="store-meta">
+              <div class="store-label" data-i18n="hero.storeSubApple">Şuradan indirin</div>
+              <div class="store-name">App Store</div>
+            </div>
+          </a>
+
+          <!-- Google Play -->
+          <a href="#" class="store-btn store-btn--google" aria-label="Get it on Google Play">
+            <svg class="store-svg-icon" viewBox="0 0 24 24" fill="none">
+              <path d="M3.18 23.76c.31.17.67.2 1.01.09L15.54 12 12 8.46 3.18 23.76z" fill="#EA4335"/>
+              <path d="M20.47 10.18 17.6 8.55 13.71 12l3.89 3.45 2.87-1.63c.82-.47.82-1.17 0-1.64z" fill="#FBBC04"/>
+              <path d="M4.19.15C3.85.04 3.49.07 3.18.24L12 8.46l3.54-3.54L4.19.15z" fill="#4285F4"/>
+              <path d="M3.18.24C2.44.65 2 1.47 2 2.46v19.08c0 .99.44 1.81 1.18 2.22L12 15.54 3.18.24z" fill="#34A853"/>
+            </svg>
+            <div class="store-meta">
+              <div class="store-label" data-i18n="hero.storeSubGoogle">Şuradan edinin</div>
+              <div class="store-name">Google Play</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- OFFICIAL SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Brand Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-link">
+            <img src="assets/icons/logo.png" alt="Fridos AI" class="footer-brand-logo">
+            <span class="footer-brand-name">Fridos AI</span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Kişisel beslenme, daha anlaşılır.</p>
+        </div>
+
+        <!-- Legal Column -->
+        <div>
+          <div class="footer-heading" data-i18n="footer.legal">Yasal</div>
+          <ul class="footer-nav-list">
+            <li><a href="privacy.html" class="footer-nav-link" data-i18n="footer.privacy">Gizlilik Politikası</a></li>
+            <li><a href="terms.html" class="footer-nav-link" data-i18n="footer.terms">Kullanım Şartları</a></li>
+            <li><a href="delete-account.html" class="footer-nav-link" data-i18n="footer.deleteAccount">Hesap Silme</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Column -->
+        <div>
+          <div class="footer-heading" data-i18n="footer.contact">İletişim</div>
+          <ul class="footer-nav-list">
+            <li><a href="mailto:support@fridos.app" class="footer-nav-link">support@fridos.app</a></li>
+          </ul>
+          <!-- Language Switcher -->
+          <div class="footer-lang-row">
+            <button class="footer-lang-btn active" data-lang="tr">TR</button>
+            <button class="footer-lang-btn" data-lang="fr">FR</button>
+            <button class="footer-lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-divider-line"></div>
+
+      <div class="footer-bottom-row">
+        <div data-i18n="footer.copyright">© 2026 Fridos AI. Tüm hakları saklıdır.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

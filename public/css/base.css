@@ -1,0 +1,36 @@
+/* ═══ BASE — Reset, Typography, Globals ═══════════════════════════════ */
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color-scheme: dark;
+  scroll-padding-top: 88px; /* offset for sticky header */
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-secondary);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
