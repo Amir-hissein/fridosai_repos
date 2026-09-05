@@ -144,7 +144,7 @@
   to   { opacity: 1; transform: none; }
 }
 @keyframes hero-mockup-in {
-  from { opacity: 0; transform: translateX(40px) scale(0.95); }
+  from { opacity: 0; transform: translateY(28px) scale(0.96); }
   to   { opacity: 1; transform: none; }
 }
 
@@ -223,4 +223,22 @@
 }
 .nav-link:hover {
   transform: translateY(-1px);
+}
+
+/* Hero Orb Mobile/Tablet Containment - strictly inside screen bounds */
+@media (max-width: 768px) {
+  .hero-orb-1 {
+    width: 260px;
+    height: 260px;
+    top: -30px;
+    right: 0;
+    filter: blur(60px);
+  }
+  .hero-orb-2 {
+    width: 220px;
+    height: 220px;
+    bottom: 0;
+    left: 0;
+    filter: blur(60px);
+  }
 }

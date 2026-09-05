@@ -164,45 +164,48 @@
   .hero-subtext { font-size: 16px; max-width: 100%; }
 
   /* 3D Mockup Formation — Phablet: all 3 phones scaled down & spread */
+  .hero-wrap { padding: 50px 0 40px; gap: 36px; overflow: hidden; contain: paint; max-width: 100%; }
   .mockup-container {
-    min-height: 580px;
+    min-height: 500px;
     width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+    contain: paint;
   }
   .mockup-left {
     display: flex;
-    width: 235px;
-    height: 490px;
-    left: calc(50% - 225px);
-    top: 35px;
-    transform: perspective(900px) rotateY(14deg) rotateZ(-3deg) scale(0.9);
+    width: 190px;
+    height: 410px;
+    left: calc(50% - 150px);
+    top: 30px;
+    transform: perspective(800px) rotateY(12deg) rotateZ(-3deg) scale(0.9);
     opacity: 0.88;
     z-index: 1;
   }
   .mockup-right {
     display: flex;
-    width: 235px;
-    height: 490px;
-    right: calc(50% - 225px);
-    top: 35px;
-    transform: perspective(900px) rotateY(-14deg) rotateZ(3deg) scale(0.9);
+    width: 190px;
+    height: 410px;
+    right: calc(50% - 150px);
+    top: 30px;
+    transform: perspective(800px) rotateY(-12deg) rotateZ(3deg) scale(0.9);
     opacity: 0.88;
     z-index: 1;
   }
   .mockup-center {
     display: flex;
-    width: 275px;
-    height: 560px;
+    width: 235px;
+    height: 485px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
     animation: floatCenter 6s ease-in-out infinite alternate;
-    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.92), 0 0 40px var(--primary-glow);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.92), 0 0 30px var(--primary-glow);
   }
 
   /* Steps: single col, compact */
@@ -211,7 +214,19 @@
   .step-item  { padding: 12px 10px; }
 
   /* Section 01 - overline word-break */
-  .feature-01-wrap { padding: 75px 0 70px; gap: 40px; }
+  .feature-01-wrap { padding: 75px 0 70px; gap: 40px; overflow: hidden; max-width: 100%; }
+  .hud-viewfinder  { overflow: hidden; }
+  .chip-carbs   { left: 0; font-size: 12px; }
+  .chip-protein { left: 0; font-size: 12px; }
+  .chip-fat     { right: 0; font-size: 12px; }
+  .section-02-wrap { overflow: hidden; max-width: 100%; }
+  .recipe-swapper-stage { overflow: hidden; max-width: 100%; }
+  .fridge-feature-container { overflow: hidden; max-width: 100%; }
+  .fridge-big-card { overflow: hidden; max-width: 100%; }
+  .sprint-section-wrap { overflow: hidden; max-width: 100%; }
+  .transparency-section-wrap { overflow: hidden; max-width: 100%; }
+  .transparency-card { overflow: hidden; max-width: 100%; contain: paint; }
+  .cta-banner-wrap { overflow: hidden; max-width: 100%; }
   .overline { word-break: normal; flex-wrap: wrap; gap: 4px; }
 
   /* Plate stage responsive */
@@ -289,7 +304,7 @@
 
 /* 4 ── Mobile ≤ 480px — ROOMY SINGLE COLUMN WITH COMFORTABLE PACING */
 @media (max-width: 480px) {
-  .container { padding: 0 16px; }
+  .container { padding: 0 16px; overflow: hidden; max-width: 100%; }
 
   /* Typography — fluid scale */
   .hero-heading    { font-size: clamp(28px, 8.5vw, 38px); letter-spacing: -0.8px; }
@@ -305,7 +320,7 @@
   .brand-text { font-size: 16px; }
 
   /* ── HERO ── */
-  .hero-wrap { padding: 36px 0 30px; gap: 32px; }
+  .hero-wrap { padding: 36px 0 30px; gap: 32px; overflow: hidden; contain: paint; max-width: 100%; }
   .store-row {
     gap: 10px;
     width: 100%;
@@ -341,7 +356,7 @@
 
   /* 3D Mockup Formation — Mobile: 3 cards scaled and centered without horizontal overflow */
   .mockup-container {
-    min-height: 440px;
+    min-height: 415px;
     width: 100%;
     max-width: 100%;
     position: relative;
@@ -349,44 +364,45 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    contain: paint;
     margin-top: 10px;
   }
   .mockup-left {
     display: flex;
-    width: 155px;
-    height: 330px;
-    left: calc(50% - 130px);
+    width: 145px;
+    height: 310px;
+    left: calc(50% - 118px);
     top: 35px;
-    transform: perspective(700px) rotateY(12deg) rotateZ(-3deg) scale(0.9);
-    opacity: 0.88;
+    transform: perspective(700px) rotateY(10deg) rotateZ(-2.5deg) scale(0.9);
+    opacity: 0.85;
     z-index: 1;
-    border-radius: 22px;
+    border-radius: 20px;
     border-width: 2px;
   }
   .mockup-right {
     display: flex;
-    width: 155px;
-    height: 330px;
-    right: calc(50% - 130px);
+    width: 145px;
+    height: 310px;
+    right: calc(50% - 118px);
     top: 35px;
-    transform: perspective(700px) rotateY(-12deg) rotateZ(3deg) scale(0.9);
-    opacity: 0.88;
+    transform: perspective(700px) rotateY(-10deg) rotateZ(2.5deg) scale(0.9);
+    opacity: 0.85;
     z-index: 1;
-    border-radius: 22px;
+    border-radius: 20px;
     border-width: 2px;
   }
   .mockup-center {
     display: flex;
-    width: 195px;
-    height: 405px;
+    width: 185px;
+    height: 385px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
-    border-radius: 26px;
-    border-width: 2.5px;
+    border-radius: 24px;
+    border-width: 2px;
     animation: floatCenter 6s ease-in-out infinite alternate;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.95), 0 0 20px var(--primary-glow);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.95), 0 0 18px var(--primary-glow);
   }
 
   /* 3D Mockup Internal Scaling on Mobile */
@@ -566,7 +582,7 @@
   }
 
   /* ── FOOTER (Comfortable, uncompressed mobile hierarchy) ── */
-  .site-footer { padding: 44px 0 26px; }
+  .site-footer { padding: 44px 0 26px; overflow: hidden; max-width: 100%; }
   .footer-top-grid {
     grid-template-columns: 1fr;
     gap: 22px;
