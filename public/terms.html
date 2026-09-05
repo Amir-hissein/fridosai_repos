@@ -8,6 +8,24 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/legal.css">
   <link rel="icon" href="assets/icons/logo.png">
+  <script>
+    (function(){
+      try {
+        var s = localStorage.getItem("fridos_lang");
+        var l = s;
+        if (!l || (l !== "fr" && l !== "tr" && l !== "en")) {
+          var langs = navigator.languages || [navigator.language || ""];
+          for (var i = 0; i < langs.length; i++) {
+            var c = (langs[i] || "").toLowerCase().split("-")[0].trim();
+            if (c === "fr" || c === "tr" || c === "en") { l = c; break; }
+          }
+          if (!l) l = "en";
+        }
+        document.documentElement.lang = l;
+        window.__FRIDOS_INITIAL_LANG__ = l;
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body>
   <main class="legal-page-wrap">

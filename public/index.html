@@ -8,6 +8,24 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/legal.css">
   <link rel="icon" type="image/png" href="assets/icons/logo.png">
+  <script>
+    (function(){
+      try {
+        var s = localStorage.getItem("fridos_lang");
+        var l = s;
+        if (!l || (l !== "fr" && l !== "tr" && l !== "en")) {
+          var langs = navigator.languages || [navigator.language || ""];
+          for (var i = 0; i < langs.length; i++) {
+            var c = (langs[i] || "").toLowerCase().split("-")[0].trim();
+            if (c === "fr" || c === "tr" || c === "en") { l = c; break; }
+          }
+          if (!l) l = "en";
+        }
+        document.documentElement.lang = l;
+        window.__FRIDOS_INITIAL_LANG__ = l;
+      } catch(e) {}
+    })();
+  </script>
 </head>
 <body>
 
@@ -288,13 +306,13 @@
               <svg class="tab-svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
               </svg>
-              <span class="tab-text">Plan</span>
+              <span class="tab-text" data-i18n="appTab.plan">Plan</span>
             </div>
             <div class="tab-btn">
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 2l-4 4 4 4 4-4-4-4zM2 18l4-4 4 4-4 4-4-4zM8.5 8.5l7 7M3 3l18 18"/>
               </svg>
-              <span class="tab-text">Recipes</span>
+              <span class="tab-text" data-i18n="appTab.recipes">Recipes</span>
             </div>
             <div class="tab-btn-floating">
               <div class="floating-scan-box">
@@ -308,14 +326,14 @@
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
               </svg>
-              <span class="tab-text">Profile</span>
+              <span class="tab-text" data-i18n="appTab.profile">Profile</span>
             </div>
             <div class="tab-btn">
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 3h12l4 6-10 12L2 9l4-6z"/>
                 <path d="M10 9L12 3l2 6-4 12"/>
               </svg>
-              <span class="tab-text">Pro</span>
+              <span class="tab-text" data-i18n="appTab.pro">Pro</span>
             </div>
           </div>
         </div>
@@ -500,7 +518,7 @@
 
           <div class="phone-app-header">
             <div class="phone-header-title" data-i18n="hero.phone3Title" data-i18n-html="true">Akıllı Buzdolabı</div>
-            <div class="phone-date-badge phone-date-badge--green">3 Malzeme Algılandı</div>
+            <div class="phone-date-badge phone-date-badge--green" data-i18n="hero.phone3DetectedBadge">3 Malzeme Algılandı</div>
           </div>
           
           <div class="fridge-photo-wrap">
@@ -517,23 +535,23 @@
 
             <!-- Detected Ingredient Floating Pins with SVG checkmarks -->
             <div class="phone-detect-pin" style="top: 20%; left: 12%;">
-              <span>🥚 Yumurta</span> <span class="pin-check">✓</span>
+              <span data-i18n="hero.ingPinEgg">🥚 Yumurta</span> <span class="pin-check">✓</span>
             </div>
             <div class="phone-detect-pin" style="top: 45%; right: 10%;">
-              <span>🥛 Süt</span> <span class="pin-check">✓</span>
+              <span data-i18n="hero.ingPinMilk">🥛 Süt</span> <span class="pin-check">✓</span>
             </div>
             <div class="phone-detect-pin" style="bottom: 22%; left: 14%;">
-              <span>🐔 Tavuk</span> <span class="pin-check">✓</span>
+              <span data-i18n="hero.ingPinChicken">🐔 Tavuk</span> <span class="pin-check">✓</span>
             </div>
           </div>
 
           <!-- Suggested Recipe Card from Fridge Scan -->
           <div class="phone-fridge-recipe-card">
             <div class="fridge-rec-header">
-              <span class="fridge-rec-tag">Önerilen Tarif</span>
-              <span class="fridge-rec-cal">550 kcal</span>
+              <span class="fridge-rec-tag" data-i18n="hero.recBadge">Önerilen Tarif</span>
+              <span class="fridge-rec-cal">550 <span data-i18n="common.kcal">kcal</span></span>
             </div>
-            <div class="fridge-rec-name">Avokadolu Tost &amp; Fırın Patates</div>
+            <div class="fridge-rec-name" data-i18n="hero.recTitle">Avokadolu Tost &amp; Fırın Patates</div>
           </div>
 
           <!-- Authentic App Bottom Tab Bar with Floating Center Scan Button -->
@@ -542,13 +560,13 @@
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/>
               </svg>
-              <span class="tab-text">Plan</span>
+              <span class="tab-text" data-i18n="appTab.plan">Plan</span>
             </div>
             <div class="tab-btn">
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 2l-4 4 4 4 4-4-4-4zM2 18l4-4 4 4-4 4-4-4zM8.5 8.5l7 7M3 3l18 18"/>
               </svg>
-              <span class="tab-text">Recipes</span>
+              <span class="tab-text" data-i18n="appTab.recipes">Recipes</span>
             </div>
             <div class="tab-btn-floating">
               <div class="floating-scan-box">
@@ -562,14 +580,14 @@
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
               </svg>
-              <span class="tab-text">Profile</span>
+              <span class="tab-text" data-i18n="appTab.profile">Profile</span>
             </div>
             <div class="tab-btn">
               <svg class="tab-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M6 3h12l4 6-10 12L2 9l4-6z"/>
                 <path d="M10 9L12 3l2 6-4 12"/>
               </svg>
-              <span class="tab-text">Pro</span>
+              <span class="tab-text" data-i18n="appTab.pro">Pro</span>
             </div>
           </div>
         </div>
@@ -987,10 +1005,10 @@
             <div>
               <div class="sprint-banner-title" data-i18n="sec5.sprintDone">Sprint tamamlandı!</div>
               <div class="sprint-banner-sub">
-                <span class="sprint-sub-label">Bu Sprintte</span>
+                <span class="sprint-sub-label" data-i18n="sec5.subLabel">Bu Sprintte</span>
                 <span class="sprint-sub-val">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><path d="M7 7l10 10M17 7v10H7"/></svg>
-                  <strong>5.9 kg</strong> kaydedildi
+                  <strong>5.9 kg</strong> <span data-i18n="sec5.recordedLabel">kaydedildi</span>
                 </span>
               </div>
             </div>
@@ -1008,7 +1026,7 @@
           <div class="sprint-meta-card">
             <div class="sprint-meta-row">
               <div>
-                <div class="sprint-meta-title">Sprint 1</div>
+                <div class="sprint-meta-title" data-i18n="sec5.sprintTitle">Sprint 1</div>
                 <div class="sprint-meta-date">28.05.2026 - 25.06.2026</div>
               </div>
               <span class="sprint-badge-done" data-i18n="sec5.sprintStatus">● Tamamlandı</span>
@@ -1016,11 +1034,11 @@
 
             <div class="sprint-weight-stats">
               <div class="sprint-stat-col">
-                <div class="sprint-stat-label">Başlangıç Kilosu</div>
+                <div class="sprint-stat-label" data-i18n="sec5.startWeightLabel">Başlangıç Kilosu</div>
                 <div class="sprint-stat-val">90.0 <span>kg</span></div>
               </div>
               <div class="sprint-stat-col sprint-stat-col--right">
-                <div class="sprint-stat-label">Hedef Kilo</div>
+                <div class="sprint-stat-label" data-i18n="sec5.goalWeightLabel">Hedef Kilo</div>
                 <div class="sprint-stat-val">80.0 <span>kg</span></div>
               </div>
             </div>
@@ -1051,15 +1069,15 @@
 
             <!-- Date Axis -->
             <div class="chart-date-row">
-              <span>28 Mayıs</span>
-              <span>25 Haziran</span>
+              <span data-i18n="sec5.chartDateStart">28 Mayıs</span>
+              <span data-i18n="sec5.chartDateEnd">25 Haziran</span>
             </div>
           </div>
 
           <!-- Floating Streak Card matching screenshot -->
           <div class="floating-streak-card">
             <span class="streak-big-num">7</span>
-            <span class="streak-text-label">günlük<br>seri</span>
+            <span class="streak-text-label" data-i18n="sec5.streakLabel" data-i18n-html="true">günlük<br>seri</span>
           </div>
         </div>
       </div>

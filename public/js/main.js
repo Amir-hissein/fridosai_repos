@@ -3,12 +3,39 @@
 (function () {
   'use strict';
 
-  // 1. Language Manager
-  const DEFAULT_LANG = 'tr';
-  let currentLang = localStorage.getItem('fridos_lang') || navigator.language.slice(0, 2) || DEFAULT_LANG;
-  if (!['tr', 'fr', 'en'].includes(currentLang)) {
-    currentLang = DEFAULT_LANG;
+  // 1. Language Manager & Automatic Device Language Detection
+  function detectDeviceLanguage() {
+    try {
+      const saved = localStorage.getItem("fridos_lang");
+      if (saved && ["tr", "fr", "en"].includes(saved)) {
+        return saved;
+      }
+
+      const candidates = [];
+      if (Array.isArray(navigator.languages)) {
+        candidates.push(...navigator.languages);
+      }
+      if (navigator.language) {
+        candidates.push(navigator.language);
+      }
+      if (navigator.userLanguage) {
+        candidates.push(navigator.userLanguage);
+      }
+
+      for (const raw of candidates) {
+        if (!raw || typeof raw !== "string") continue;
+        const code = raw.toLowerCase().split("-")[0].split("_")[0].trim();
+        if (code === "fr") return "fr";
+        if (code === "tr") return "tr";
+        if (code === "en") return "en";
+      }
+    } catch (e) {}
+
+    // Universal international fallback
+    return "en";
   }
+
+  let currentLang = window.__FRIDOS_INITIAL_LANG__ || detectDeviceLanguage();
 
   function setLanguage(lang) {
     if (!window.FRIDOS_TRANSLATIONS || !window.FRIDOS_TRANSLATIONS[lang]) return;
