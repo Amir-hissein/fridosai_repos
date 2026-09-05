@@ -319,19 +319,62 @@
   .brand-icon { width: 34px; height: 34px; }
   .brand-text { font-size: 16px; }
 
-  /* ── HERO ── */
-  .hero-wrap { padding: 36px 0 30px; gap: 32px; overflow: hidden; contain: paint; max-width: 100%; }
+  /* ── HERO (Cleanly Centered & Proportioned) ── */
+  .hero-wrap {
+    padding: 36px 0 32px;
+    gap: 28px;
+    text-align: center;
+    overflow: hidden;
+    contain: paint;
+    max-width: 100%;
+    width: 100%;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .overline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10.5px;
+    letter-spacing: 1.4px;
+    margin: 0 auto 12px;
+    word-break: normal;
+  }
+  .hero-heading {
+    font-size: clamp(27px, 7.8vw, 36px);
+    letter-spacing: -0.8px;
+    line-height: 1.16;
+    margin: 0 auto 12px;
+    text-align: center;
+    max-width: 100%;
+  }
+  .hero-subtext {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--text-secondary);
+    margin: 0 auto 20px;
+    text-align: center;
+    max-width: 340px;
+  }
   .store-row {
+    display: flex;
     gap: 10px;
     width: 100%;
-    max-width: 330px;
-    justify-content: flex-start;
+    max-width: 320px;
+    margin: 0 auto 16px;
+    justify-content: center;
+    align-items: center;
   }
   .store-btn {
     padding: 8px 12px;
     flex: 1 1 0;
     min-width: 0;
-    max-width: 155px;
+    max-width: 152px;
     gap: 8px;
     border-radius: 10px;
     justify-content: center;
@@ -353,56 +396,79 @@
     line-height: 1.15;
     white-space: nowrap;
   }
+  .hero-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin: 0 auto;
+    text-align: center;
+  }
 
-  /* 3D Mockup Formation — Mobile: 3 cards scaled and centered without horizontal overflow */
+  /* 3D Mockup Formation — Mobile: 3 cards clearly visible, fanned out elegantly */
   .mockup-container {
-    min-height: 415px;
+    min-height: 470px;
     width: 100%;
     max-width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    contain: paint;
-    margin-top: 10px;
+    margin-top: 8px;
   }
   .mockup-left {
     display: flex;
-    width: 145px;
-    height: 310px;
-    left: calc(50% - 118px);
-    top: 35px;
-    transform: perspective(700px) rotateY(10deg) rotateZ(-2.5deg) scale(0.9);
-    opacity: 0.85;
+    width: 155px;
+    height: 340px;
+    left: calc(50% - 148px);
+    top: 32px;
+    transform: perspective(800px) rotateY(15deg) rotateZ(-3.5deg) scale(0.9);
+    opacity: 0.92;
     z-index: 1;
-    border-radius: 20px;
+    border-radius: 22px;
     border-width: 2px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
   }
   .mockup-right {
     display: flex;
-    width: 145px;
-    height: 310px;
-    right: calc(50% - 118px);
-    top: 35px;
-    transform: perspective(700px) rotateY(-10deg) rotateZ(2.5deg) scale(0.9);
-    opacity: 0.85;
+    width: 155px;
+    height: 340px;
+    right: calc(50% - 148px);
+    top: 32px;
+    transform: perspective(800px) rotateY(-15deg) rotateZ(3.5deg) scale(0.9);
+    opacity: 0.92;
     z-index: 1;
-    border-radius: 20px;
+    border-radius: 22px;
     border-width: 2px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
   }
   .mockup-center {
     display: flex;
-    width: 185px;
-    height: 385px;
+    width: 205px;
+    height: 435px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
-    border-radius: 24px;
-    border-width: 2px;
+    border-radius: 26px;
+    border-width: 2.5px;
     animation: floatCenter 6s ease-in-out infinite alternate;
-    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.95), 0 0 18px var(--primary-glow);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.95), 0 0 24px var(--primary-glow);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+  }
+  .mockup-phone.is-focused {
+    z-index: 10 !important;
+    opacity: 1 !important;
+    transform: perspective(800px) rotateY(0deg) rotateZ(0deg) scale(1.05) translateY(-10px) !important;
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.98), 0 0 40px var(--primary-glow) !important;
+    border-color: var(--primary) !important;
   }
 
   /* 3D Mockup Internal Scaling on Mobile */
@@ -462,8 +528,12 @@
 
   /* Right card internals */
   .fridge-photo-wrap { height: 140px; margin: 0 8px 6px; border-radius: 10px; }
-  .phone-detect-pin { font-size: 7px; padding: 2px 5px; }
+  .phone-detect-pin { font-size: 7.5px; padding: 2.5px 6px; }
   .phone-fridge-bracket { width: 12px; height: 12px; }
+  .phone-fridge-recipe-card { padding: 5px 8px; margin: 0 8px 4px; border-radius: 8px; }
+  .fridge-rec-tag { font-size: 8px; }
+  .fridge-rec-name { font-size: 8.5px; }
+  .fridge-rec-cal { font-size: 8px; }
 
   /* ── 3-STEP STRIP ── */
   .steps-strip  { padding: 26px 0; margin: 16px 0 40px; }
@@ -653,31 +723,32 @@
 
 /* ── Extra small (≤360px) ── */
 @media (max-width: 360px) {
-  .mockup-container { min-height: 390px; }
+  .mockup-container { min-height: 430px; }
   .mockup-left {
     width: 140px;
-    height: 290px;
-    left: calc(50% - 110px);
-    top: 25px;
-    transform: perspective(500px) rotateY(12deg) rotateZ(-3deg) scale(0.84);
-    opacity: 0.72;
+    height: 305px;
+    left: calc(50% - 132px);
+    top: 28px;
+    transform: perspective(600px) rotateY(14deg) rotateZ(-3deg) scale(0.88);
+    opacity: 0.9;
     border-radius: 18px;
   }
   .mockup-right {
     width: 140px;
-    height: 290px;
-    right: calc(50% - 110px);
-    top: 25px;
-    transform: perspective(500px) rotateY(-12deg) rotateZ(3deg) scale(0.84);
-    opacity: 0.72;
+    height: 305px;
+    right: calc(50% - 132px);
+    top: 28px;
+    transform: perspective(600px) rotateY(-14deg) rotateZ(3deg) scale(0.88);
+    opacity: 0.9;
     border-radius: 18px;
   }
   .mockup-center {
-    width: 175px;
-    height: 365px;
+    width: 185px;
+    height: 395px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 22px;
+    border-radius: 24px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.95), 0 0 18px var(--primary-glow);
   }
   .store-row,
   .cta-store-row {

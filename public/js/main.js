@@ -193,6 +193,21 @@
       });
     });
 
+    // Interactive 3D Hero Phone Mockups — Tap-to-Focus for Mobile & Desktop
+    const mockupPhones = document.querySelectorAll('.mockup-phone');
+    if (mockupPhones.length > 0) {
+      mockupPhones.forEach(phone => {
+        phone.addEventListener('click', () => {
+          if (phone.classList.contains('is-focused') || phone.classList.contains('mockup-center')) {
+            mockupPhones.forEach(p => p.classList.remove('is-focused'));
+          } else {
+            mockupPhones.forEach(p => p.classList.remove('is-focused'));
+            phone.classList.add('is-focused');
+          }
+        });
+      });
+    }
+
     // Bind recipe swapper button
     const swapBtn = document.querySelector('.swap-arrow-pill');
     if (swapBtn) {
