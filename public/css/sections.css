@@ -2810,25 +2810,27 @@
 }
 
 .footer-lang-btn {
-  background: transparent;
-  border: none;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
   color: var(--text-muted);
   font-family: var(--font);
   font-size: 13px;
   font-weight: 700;
-  padding: 4px 2px;
+  padding: 4px 6px;
   cursor: pointer;
-  transition: color var(--transition-fast);
-  letter-spacing: 0.3px;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+  letter-spacing: 0.5px;
 }
 
 .footer-lang-btn:hover {
-  color: var(--text-primary);
+  color: #FFFFFF;
 }
 
 .footer-lang-btn.active {
-  color: var(--primary);
-  font-weight: 800;
+  color: var(--primary) !important;
+  font-weight: 900;
 }
 
 .footer-divider-line {

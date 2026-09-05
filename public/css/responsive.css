@@ -851,11 +851,12 @@
     margin-top: 12px;
   }
   .footer-lang-btn {
-    padding: 5px 12px;
-    font-size: 12px;
-    border-radius: var(--radius-sm);
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-light);
+    padding: 4px 6px;
+    font-size: 12.5px;
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
   }
   .footer-divider-line {
     margin-bottom: 18px;
