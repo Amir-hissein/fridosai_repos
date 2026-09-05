@@ -543,49 +543,195 @@
   .step-title   { font-size: 15px; }
   .step-desc    { font-size: 13px; }
 
-  /* ── SECTION 01: AI MEAL SCAN ── */
-  .feature-01-wrap { padding: 60px 0 65px; gap: 36px; }
-  .pills-row { gap: 8px; }
-  .feature-pill { padding: 7px 14px; font-size: 12.5px; }
-  .hud-viewfinder { padding: 20px 14px; border-radius: 20px; }
-  .plate-stage { width: 230px; height: 230px; }
-  .hud-bottom-bar { padding: 10px 16px; }
-  .hud-stat-val { font-size: 14px; }
+  /* ── SECTION 01: AI MEAL SCAN DISH CARD ── */
+  .feature-01-wrap { padding: 50px 0 55px; gap: 30px; overflow: hidden; }
+  .pills-row { gap: 8px; justify-content: center; }
+  .feature-pill { padding: 6px 13px; font-size: 12px; }
+  .hud-viewfinder {
+    padding: 24px 12px 18px;
+    border-radius: 20px;
+    max-width: 325px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .plate-stage {
+    width: 205px;
+    height: 205px;
+    margin: 6px auto;
+  }
+  .plate-circle-wrap {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .hud-bottom-bar {
+    padding: 8px 12px;
+    margin-top: 14px;
+    gap: 6px;
+  }
+  .hud-stat-label { font-size: 9px; }
+  .hud-stat-val { font-size: 12.5px; }
 
-  /* AI chips — kept strictly inside viewport */
-  .feature-01-wrap { overflow: hidden; }
-  .hud-viewfinder  { overflow: hidden; }
-  .chip-calorie { top: -12px; font-size: 12px; }
-  .chip-carbs   { left: 0; font-size: 11.5px; padding: 5px 10px; }
-  .chip-protein { left: 0; font-size: 11.5px; padding: 5px 10px; }
-  .chip-fat     { right: 0; font-size: 11.5px; padding: 5px 10px; }
+  /* AI chips — cleanly framing the scanned plate */
+  .chip-calorie { top: -10px; font-size: 11.5px; padding: 4px 10px; }
+  .chip-carbs   { top: 30px; left: 4px; font-size: 10.5px; padding: 4px 8px; }
+  .chip-protein { bottom: 30px; left: 4px; font-size: 10.5px; padding: 4px 8px; }
+  .chip-fat     { top: 40px; right: 4px; font-size: 10.5px; padding: 4px 8px; }
 
-  /* ── SECTION 02: PERSONALIZED ── */
-  .section-02-wrap   { padding: 60px 0 70px; gap: 32px; }
-  .sub-section-title { font-size: 20px; }
-  .recipe-swapper-stage { min-height: 320px; }
-  .recipe-swap-card  { width: 260px; }
-  .numbered-steps-list { gap: 16px; }
-  .step-circle { width: 32px; height: 32px; font-size: 13px; }
-  .num-step-title { font-size: 15px; }
-  .num-step-desc  { font-size: 13px; }
+  /* ── SECTION 02: PERSONALIZED RECIPE SWAP CARDS ── */
+  .section-02-wrap   { padding: 50px 0 60px; gap: 28px; overflow: hidden; }
+  .sub-section-title { font-size: 19px; }
+  .recipe-swapper-stage {
+    min-height: 295px;
+    width: 100%;
+    max-width: 325px;
+    margin: 0 auto;
+    overflow: hidden;
+    perspective: 800px;
+  }
+  .recipe-swap-card  {
+    width: 250px;
+    border-radius: 16px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  }
+  .recipe-card-img-wrap {
+    height: 135px;
+  }
+  .recipe-card-content {
+    padding: 9px 12px 10px;
+  }
+  .recipe-card-title {
+    font-size: 13.5px;
+    font-weight: 800;
+  }
+  .recipe-card-meta {
+    font-size: 11px;
+    gap: 8px;
+    margin-top: 3px;
+  }
+  .card-bg-blur {
+    left: 8px;
+    top: 8px;
+    transform: scale(0.92) rotate(-3deg);
+  }
+  .card-fg-active {
+    right: 8px;
+    top: 24px;
+  }
+  .swap-arrow-pill {
+    bottom: -2px;
+    font-size: 11.5px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    gap: 5px;
+  }
+  .numbered-steps-list { gap: 14px; }
+  .step-circle { width: 30px; height: 30px; font-size: 12px; }
+  .num-step-title { font-size: 14px; }
+  .num-step-desc  { font-size: 12.5px; }
 
-  /* ── SECTION 03: FRIDGE ── */
-  .fridge-feature-container { padding: 32px 0 65px; }
-  .fridge-big-card { padding: 28px 16px; gap: 28px; border-radius: 22px; }
-  .fridge-scan-header { font-size: 15px; }
-  .fridge-scanner-frame { height: 240px; }
-  .recipe-result-card { border-radius: 14px; }
-  .recipe-result-img  { height: 110px; }
-  .recipe-result-title { font-size: 13px; }
+  /* ── SECTION 03: FRIDGE & MATCHED RECIPE CARD ── */
+  .fridge-feature-container { padding: 30px 0 55px; overflow: hidden; }
+  .fridge-big-card {
+    padding: 24px 14px;
+    gap: 22px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .fridge-scan-header {
+    font-size: 15px;
+    text-align: center;
+  }
+  .fridge-flow-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .fridge-scanner-frame {
+    width: 100%;
+    max-width: 290px;
+    height: 205px;
+    border-radius: 16px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .fridge-detect-badge {
+    font-size: 9px;
+    padding: 3px 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  .fridge-status-bar {
+    height: 34px;
+    padding: 0 10px;
+  }
+  .fridge-status-text { font-size: 10px; }
+  .fridge-recipe-count { font-size: 10px; }
 
-  /* ── SECTION 04: RECIPES GRID ── */
-  .recipes-section-wrap { padding: 60px 0 70px; gap: 32px; }
-  .recipes-grid-4 { grid-template-columns: 1fr; gap: 16px; }
-  .recipe-showcase-card { height: 240px; padding: 16px; }
-  .recipe-card-name { font-size: 15px; }
-  .recipe-card-macros { flex-wrap: wrap; gap: 6px; }
-  .recipe-card-content { padding: 12px 14px; }
+  /* Matched Recipe Result Card */
+  .recipe-result-card {
+    width: 100%;
+    max-width: 290px;
+    border-radius: 16px;
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  }
+  .recipe-result-img {
+    height: 115px;
+    object-fit: cover;
+  }
+  .recipe-result-content {
+    padding: 11px 13px;
+  }
+  .recipe-result-title {
+    font-size: 13.5px;
+    font-weight: 800;
+  }
+  .recipe-meta-pill {
+    font-size: 10px;
+    padding: 2.5px 7px;
+  }
+
+  /* ── SECTION 04: RECIPES 2x2 DYNAMIC GRID ── */
+  .recipes-section-wrap { padding: 50px 0 60px; gap: 26px; overflow: hidden; }
+  .recipes-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .recipe-showcase-card {
+    height: 195px;
+    padding: 12px;
+    border-radius: 16px;
+  }
+  .recipe-card-index {
+    font-size: 9px;
+    margin-bottom: 2px;
+    opacity: 0.85;
+  }
+  .recipe-card-name {
+    font-size: 12.5px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+  .recipe-card-macros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .macro-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+    border-radius: 6px;
+  }
+  .card-arrow-circle {
+    width: 22px;
+    height: 22px;
+    font-size: 10px;
+    border-radius: 50%;
+  }
 
   /* ── SECTION 05: SPRINT ── */
   .sprint-section-wrap { gap: 36px; padding: 55px 0 65px; overflow: hidden; }
@@ -776,8 +922,14 @@
   .cta-store-row .store-name {
     font-size: 12px;
   }
-  .plate-stage { width: 200px; height: 200px; }
-  .recipe-swap-card { width: 235px; }
+  .plate-stage { width: 180px; height: 180px; }
+  .recipe-swap-card { width: 225px; }
+  .recipe-card-img-wrap { height: 120px; }
+  .fridge-scanner-frame { height: 185px; max-width: 260px; }
+  .recipe-result-card { max-width: 260px; }
+  .recipe-result-img { height: 100px; }
+  .recipes-grid-4 { grid-template-columns: 1fr; gap: 10px; }
+  .recipe-showcase-card { height: 155px; padding: 12px; }
 
   /* ── Extra small footer ── */
   .site-footer       { padding: 38px 0 22px; }
