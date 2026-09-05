@@ -76,6 +76,8 @@ const server = http.createServer((req, res) => {
       'Access-Control-Allow-Origin': '*',
       'Cache-Control': 'no-cache, no-store, must-revalidate',
       'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'SAMEORIGIN',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
     });
 
     const stream = fs.createReadStream(filePath);
