@@ -54,7 +54,7 @@
     <div class="legal-layout-grid">
       <!-- Left: Sticky Sidebar Navigation -->
       <aside class="legal-sidebar">
-        <div>
+        <div class="sidebar-nav-box">
           <div class="sidebar-title" data-i18n="legal.sidebarTitle">Bu sayfada</div>
           <ul class="sidebar-nav-list">
             <li><a href="#uygulama" class="sidebar-nav-link active" data-i18n="deleteAccount.nav1">Uygulama içinden silme</a></li>
@@ -79,12 +79,12 @@
           <p class="legal-paragraph" data-i18n="deleteAccount.s1_p1">
             En hızlı ve anında silme yöntemi mobil uygulama içerisinden gerçekleştirilir.
           </p>
-          <ul class="legal-bullet-list">
+          <ol class="legal-step-list">
             <li data-i18n="deleteAccount.s1_b1">Fridos AI uygulamasını açın.</li>
             <li data-i18n="deleteAccount.s1_b2" data-i18n-html="true">Alt bardaki <strong>Profil</strong> sekmesine gidin.</li>
             <li data-i18n="deleteAccount.s1_b3" data-i18n-html="true">Sayfanın en altındaki kırmızı <strong>« Hesabı Sil »</strong> butonuna dokunun.</li>
             <li data-i18n="deleteAccount.s1_b4" data-i18n-html="true">Açılan onay kutusunu onaylayın. Hesabınız ve tüm verileriniz <strong>anında kalıcı olarak</strong> silinecektir.</li>
-          </ul>
+          </ol>
         </section>
 
         <!-- 2. E-posta ile Silme Talebi -->
@@ -96,6 +96,12 @@
           <p class="legal-paragraph" data-i18n="deleteAccount.s2_p2" data-i18n-html="true">
             Talebiniz en geç <strong>48 saat</strong> içinde işleme alınarak verileriniz tamamen silinir.
           </p>
+          <div class="legal-action-box">
+            <a href="mailto:info@fridos.app?subject=Account%20Deletion%20Request%20-%20Fridos%20AI" class="legal-action-btn" id="deleteEmailBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span data-i18n="deleteAccount.emailBtn">E-posta ile Talep Gönder (info@fridos.app)</span>
+            </a>
+          </div>
         </section>
 
         <!-- 3. Silinen Veri Türleri -->
@@ -110,8 +116,11 @@
         </section>
 
         <!-- 4. Abonelik İptali Hatırlatması -->
-        <section id="abonelik" class="legal-sec-item">
-          <h2 class="legal-sec-heading" data-i18n="deleteAccount.s4_title">4. Önemli Abonelik Hatırlatması</h2>
+        <section id="abonelik" class="legal-sec-item legal-warning-item">
+          <div class="legal-warning-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            <h2 class="legal-sec-heading" data-i18n="deleteAccount.s4_title">4. Önemli Abonelik Hatırlatması</h2>
+          </div>
           <p class="legal-paragraph" data-i18n="deleteAccount.s4_p1">
             Hesabınızı silmek, Apple App Store veya Google Play üzerinden başlattığınız aktif abonelikleri otomatik olarak sonlandırmaz. Ücretlendirmeyi durdurmak için lütfen cihazınızın mağaza abonelik ayarlarından iptal işlemini gerçekleştirmeyi unutmayın.
           </p>

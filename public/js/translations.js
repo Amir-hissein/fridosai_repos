@@ -290,7 +290,8 @@ window.FRIDOS_TRANSLATIONS = {
       "s3_b3": "Kayıtlı ve favori tarifler, market alışveriş listeleri ve buzdolabı içerikleri.",
       "s3_b4": "Su, adım, sprint geçmişi ve Fridos Puanı kayıtları.",
       "s4_title": "4. Önemli Abonelik Hatırlatması",
-      "s4_p1": "Hesabınızı silmek, Apple App Store veya Google Play üzerinden başlattığınız aktif abonelikleri otomatik olarak sonlandırmaz. Ücretlendirmeyi durdurmak için lütfen cihazınızın mağaza abonelik ayarlarından iptal işlemini gerçekleştirmeyi unutmayın."
+      "s4_p1": "Hesabınızı silmek, Apple App Store veya Google Play üzerinden başlattığınız aktif abonelikleri otomatik olarak sonlandırmaz. Ücretlendirmeyi durdurmak için lütfen cihazınızın mağaza abonelik ayarlarından iptal işlemini gerçekleştirmeyi unutmayın.",
+      "emailBtn": "E-posta ile Talep Gönder (info@fridos.app)"
     },
     "common": {
       "kcal": "kcal",
@@ -592,7 +593,8 @@ window.FRIDOS_TRANSLATIONS = {
       "s3_b3": "Recettes favorites et personnalisées, listes de courses et inventaire du frigo.",
       "s3_b4": "Historique de consommation d'eau, pas quotidiens, sprints et scores Fridos.",
       "s4_title": "4. Rappel important sur les abonnements",
-      "s4_p1": "La suppression de votre compte n'annule pas automatiquement les abonnements actifs souscrits via l'Apple App Store ou Google Play Store. Pour stopper tout prélèvement futur, pensez à résilier votre abonnement dans les paramètres de gestion de votre appareil."
+      "s4_p1": "La suppression de votre compte n'annule pas automatiquement les abonnements actifs souscrits via l'Apple App Store ou Google Play Store. Pour stopper tout prélèvement futur, pensez à résilier votre abonnement dans les paramètres de gestion de votre appareil.",
+      "emailBtn": "Envoyer une demande par e-mail (info@fridos.app)"
     },
     "common": {
       "kcal": "kcal",
@@ -894,7 +896,8 @@ window.FRIDOS_TRANSLATIONS = {
       "s3_b3": "Saved and custom recipes, grocery shopping lists, and smart fridge contents.",
       "s3_b4": "Water consumption logs, daily step counts, sprint cycles, and Fridos Score data.",
       "s4_title": "4. Important Subscription Notice",
-      "s4_p1": "Deleting your account does not automatically cancel active subscriptions started through the Apple App Store or Google Play Store. To avoid future billing, please cancel your subscription in your device's app store settings."
+      "s4_p1": "Deleting your account does not automatically cancel active subscriptions started through the Apple App Store or Google Play Store. To avoid future billing, please cancel your subscription in your device's app store settings.",
+      "emailBtn": "Send Deletion Request by Email (info@fridos.app)"
     },
     "common": {
       "kcal": "kcal",

@@ -254,7 +254,8 @@
 
     // 3. Active nav section tracking
     const sections = document.querySelectorAll('section[id], div[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"], .drawer-nav-link[href^="#"]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"], .drawer-nav-link[href^="#"], .sidebar-nav-link[href^="#"]');
+    let prevActiveSection = null;
 
     function getActiveSection() {
       const scrollY = window.scrollY + 120;
@@ -314,8 +315,27 @@
       const active = getActiveSection();
       navLinks.forEach(link => {
         const target = link.getAttribute('href').slice(1);
-        link.classList.toggle('is-active', target === active);
+        const isActive = (target === active);
+        link.classList.toggle('is-active', isActive);
+        link.classList.toggle('active', isActive);
       });
+
+      if (active && active !== prevActiveSection) {
+        prevActiveSection = active;
+        const activePill = document.querySelector(`.sidebar-nav-list .sidebar-nav-link[href="#${active}"]`);
+        if (activePill && window.innerWidth <= 860) {
+          const list = activePill.closest('.sidebar-nav-list');
+          if (list) {
+            const pillLeft = activePill.offsetLeft;
+            const pillWidth = activePill.offsetWidth;
+            const listWidth = list.clientWidth;
+            list.scrollTo({
+              left: pillLeft - (listWidth / 2) + (pillWidth / 2),
+              behavior: 'smooth'
+            });
+          }
+        }
+      }
 
       ticking = false;
     }
