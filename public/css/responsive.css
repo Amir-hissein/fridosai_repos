@@ -256,6 +256,29 @@
   .cta-icon-badge  { width: auto; height: auto; border-radius: 0; background: none; border: none; box-shadow: none; margin-bottom: 22px; }
   .cta-icon-badge img { width: 68px; height: 68px; }
 
+  /* Store Badges on Tablet */
+  .cta-store-row,
+  .store-row {
+    gap: 12px;
+    justify-content: center;
+  }
+  .store-btn,
+  .cta-store-row .store-btn {
+    padding: 9px 16px;
+    gap: 10px;
+    border-radius: 11px;
+  }
+  .store-svg-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .store-label {
+    font-size: 9.5px;
+  }
+  .store-name {
+    font-size: 14px;
+  }
+
   /* Footer */
   .site-footer { padding: 55px 0 30px; }
   .toc-list { grid-template-columns: 1fr; }
@@ -283,8 +306,38 @@
 
   /* ── HERO ── */
   .hero-wrap { padding: 36px 0 30px; gap: 32px; }
-  .store-row { gap: 10px; }
-  .store-btn { padding: 10px 18px; flex: 1; min-width: 140px; max-width: 200px; }
+  .store-row {
+    gap: 10px;
+    width: 100%;
+    max-width: 330px;
+    justify-content: flex-start;
+  }
+  .store-btn {
+    padding: 8px 12px;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 155px;
+    gap: 8px;
+    border-radius: 10px;
+    justify-content: center;
+  }
+  .store-svg-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .store-label {
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+  .store-name {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
 
   /* 3D Mockup Formation — Mobile: 3 cards scaled and centered */
   .mockup-container {
@@ -467,12 +520,47 @@
   .orbit-core-text  { font-size: 20px; }
   .transparency-disclaimer-box { padding: 12px 14px; font-size: 12px; }
 
-  /* ── CTA BANNER ── */
+  /* ── CTA BANNER (Compact & Precisely Proportioned on Mobile) ── */
   .cta-horizon-arc { width: 440px; height: 340px; bottom: -260px; }
-  .cta-banner-wrap { padding: 70px 16px 95px; }
-  .cta-icon-badge  { width: auto; height: auto; border-radius: 0; background: none; border: none; box-shadow: none; margin-bottom: 18px; }
-  .cta-icon-badge img { width: 58px; height: 58px; }
-  .cta-banner-desc { font-size: 15px; margin-bottom: 28px; }
+  .cta-banner-wrap { padding: 60px 16px 85px; }
+  .cta-icon-badge  { width: auto; height: auto; border-radius: 0; background: none; border: none; box-shadow: none; margin-bottom: 16px; }
+  .cta-icon-badge img { width: 54px; height: 54px; }
+  .cta-banner-desc { font-size: 14.5px; margin-bottom: 24px; max-width: 330px; margin-left: auto; margin-right: auto; }
+  .cta-store-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 330px;
+    margin: 0 auto;
+  }
+  .cta-store-row .store-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 155px;
+    padding: 8px 12px;
+    gap: 8px;
+    border-radius: 10px;
+    justify-content: center;
+  }
+  .cta-store-row .store-svg-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .cta-store-row .store-label {
+    font-size: 9px;
+    letter-spacing: 0.2px;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+  .cta-store-row .store-name {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
 
   /* ── FOOTER (Comfortable, uncompressed mobile hierarchy) ── */
   .site-footer { padding: 44px 0 26px; }
@@ -572,7 +660,32 @@
     transform: translateX(-50%);
     border-radius: 22px;
   }
-  .store-btn { min-width: 120px; font-size: 12px; padding: 9px 14px; }
+  .store-row,
+  .cta-store-row {
+    gap: 8px;
+    max-width: 290px;
+  }
+  .store-btn,
+  .cta-store-row .store-btn {
+    min-width: 0;
+    max-width: 138px;
+    padding: 7px 9px;
+    gap: 6px;
+    border-radius: 8px;
+  }
+  .store-svg-icon,
+  .cta-store-row .store-svg-icon {
+    width: 18px;
+    height: 18px;
+  }
+  .store-label,
+  .cta-store-row .store-label {
+    font-size: 8.5px;
+  }
+  .store-name,
+  .cta-store-row .store-name {
+    font-size: 12px;
+  }
   .plate-stage { width: 200px; height: 200px; }
   .recipe-swap-card { width: 235px; }
 
