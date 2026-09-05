@@ -198,7 +198,7 @@
 .mockup-left {
   width: 290px;
   height: 605px;
-  left: -15px;
+  left: 0px;
   top: 30px;
   transform: perspective(1000px) rotateY(14deg) rotateZ(-3deg);
   opacity: 0.95;
@@ -206,6 +206,7 @@
   background: #080C0B;
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  animation: floatLeft 6s ease-in-out infinite alternate 1s;
 }
 
 .mockup-left:hover {
@@ -497,6 +498,16 @@
   100% { transform: translateX(-50%) translateY(-14px); }
 }
 
+@keyframes floatLeft {
+  0%   { transform: perspective(1000px) rotateY(14deg) rotateZ(-3deg) translateY(0px);   }
+  100% { transform: perspective(1000px) rotateY(14deg) rotateZ(-3deg) translateY(-10px); }
+}
+
+@keyframes floatRight {
+  0%   { transform: perspective(1000px) rotateY(-14deg) rotateZ(3deg) translateY(0px);   }
+  100% { transform: perspective(1000px) rotateY(-14deg) rotateZ(3deg) translateY(-10px); }
+}
+
 .mockup-center:hover {
   border-color: var(--primary);
   box-shadow: 0 45px 100px rgba(0, 0, 0, 0.98), 0 0 55px var(--primary-glow);
@@ -776,7 +787,7 @@
 .mockup-right {
   width: 290px;
   height: 605px;
-  right: -15px;
+  right: 0px;
   top: 30px;
   transform: perspective(1000px) rotateY(-14deg) rotateZ(3deg);
   opacity: 0.95;
@@ -784,6 +795,34 @@
   background: #080C0B;
   border-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  animation: floatRight 6s ease-in-out infinite alternate 2s;
+}
+
+/* Phone 3 App Header */
+.phone-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px 8px;
+}
+
+.phone-header-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+}
+
+.phone-date-badge--green {
+  background: rgba(16, 185, 129, 0.14);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
 }
 
 .mockup-right:hover {
@@ -799,9 +838,10 @@
   height: 275px;
   margin: 0 14px 10px;
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var(--primary-border);
+  border: 1.5px solid var(--primary-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .fridge-photo {
@@ -880,17 +920,7 @@
   color: #FFFFFF;
 }
 
-.fridge-photo-wrap {
-  width: 100%;
-  height: 380px;
-  position: relative;
-}
 
-.fridge-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
 .radar-scan-line {
   position: absolute;

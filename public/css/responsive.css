@@ -38,23 +38,28 @@
   }
   .mockup-left {
     display: flex;
-    width: 270px;
-    height: 560px;
-    left: calc(50% - 250px);
+    width: 260px;
+    height: 550px;
+    left: calc(50% - 240px);
     top: 35px;
     transform: perspective(1000px) rotateY(14deg) rotateZ(-3deg) scale(0.92);
-    opacity: 0.9;
+    opacity: 0.92;
     z-index: 1;
+    animation: floatLeft 6s ease-in-out infinite alternate 1s;
   }
   .mockup-right {
     display: flex;
-    width: 270px;
-    height: 560px;
-    right: calc(50% - 250px);
+    width: 260px;
+    height: 550px;
+    right: calc(50% - 240px);
     top: 35px;
     transform: perspective(1000px) rotateY(-14deg) rotateZ(3deg) scale(0.92);
-    opacity: 0.9;
+    opacity: 0.92;
     z-index: 1;
+    animation: floatRight 6s ease-in-out infinite alternate 2s;
+  }
+  .mockup-right .fridge-photo-wrap {
+    height: 245px;
   }
   .mockup-center {
     display: flex;
@@ -527,6 +532,25 @@
   .share-svg { width: 12px; height: 12px; }
 
   /* Right card internals */
+  .phone-app-header {
+    padding: 3px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .phone-header-title {
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  .phone-date-badge--green {
+    font-size: 7.5px;
+    padding: 1.5px 5px;
+    border-radius: var(--radius-pill);
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: var(--primary);
+  }
   .fridge-photo-wrap { height: 140px; margin: 0 8px 6px; border-radius: 10px; }
   .phone-detect-pin { font-size: 7.5px; padding: 2.5px 6px; }
   .phone-fridge-bracket { width: 12px; height: 12px; }
