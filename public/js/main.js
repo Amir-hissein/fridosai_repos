@@ -6,21 +6,31 @@
   // 1. Language Manager & Automatic Device Language Detection
   function detectDeviceLanguage() {
     try {
-      const saved = localStorage.getItem("fridos_lang");
-      if (saved && ["tr", "fr", "en"].includes(saved)) {
-        return saved;
+      // 1. URL parameter override (?lang=fr | ?lang=en | ?lang=tr)
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("lang");
+      if (q) {
+        const clean = q.toLowerCase().trim();
+        if (clean === "fr" || clean === "tr" || clean === "en") return clean;
       }
 
+      // 2. Explicit manual user choice (only if user explicitly clicked a language button)
+      const manual = localStorage.getItem("fridos_manual_lang");
+      if (manual && ["tr", "fr", "en"].includes(manual)) {
+        return manual;
+      }
+
+      // Clean up legacy auto-saved key if any
+      try { localStorage.removeItem("fridos_lang"); } catch(e) {}
+
+      // 3. Automatic device language detection from navigator
       const candidates = [];
       if (Array.isArray(navigator.languages)) {
         candidates.push(...navigator.languages);
       }
-      if (navigator.language) {
-        candidates.push(navigator.language);
-      }
-      if (navigator.userLanguage) {
-        candidates.push(navigator.userLanguage);
-      }
+      if (navigator.language) candidates.push(navigator.language);
+      if (navigator.userLanguage) candidates.push(navigator.userLanguage);
+      if (navigator.browserLanguage) candidates.push(navigator.browserLanguage);
 
       for (const raw of candidates) {
         if (!raw || typeof raw !== "string") continue;
@@ -35,12 +45,19 @@
     return "en";
   }
 
+  // Disconnect initial head observer if present
+  if (window.__FRIDOS_OBS__) {
+    try { window.__FRIDOS_OBS__.disconnect(); } catch(e) {}
+  }
+
   let currentLang = window.__FRIDOS_INITIAL_LANG__ || detectDeviceLanguage();
 
-  function setLanguage(lang) {
+  function setLanguage(lang, isExplicitUserClick = false) {
     if (!window.FRIDOS_TRANSLATIONS || !window.FRIDOS_TRANSLATIONS[lang]) return;
     currentLang = lang;
-    localStorage.setItem('fridos_lang', lang);
+    if (isExplicitUserClick) {
+      try { localStorage.setItem('fridos_manual_lang', lang); } catch(e) {}
+    }
     document.documentElement.lang = lang;
 
     // Update active class on language buttons
@@ -148,8 +165,8 @@
     }
   };
 
-  // 4. Init on DOM ready
-  document.addEventListener('DOMContentLoaded', () => {
+  // 4. Init on DOM ready (supports already-loaded state)
+  function initApp() {
     // Hamburger button
     if (hamburgerBtn) {
       hamburgerBtn.addEventListener('click', () => {
@@ -189,7 +206,7 @@
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const lang = btn.getAttribute('data-lang');
-        if (lang) setLanguage(lang);
+        if (lang) setLanguage(lang, true);
       });
     });
 
@@ -217,8 +234,8 @@
       });
     }
 
-    // Apply initial language
-    setLanguage(currentLang);
+    // Apply initial language (dynamic device detection without locking manual override)
+    setLanguage(currentLang, false);
 
     // Smooth scroll for internal links
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -449,5 +466,12 @@
 
     initMealScannerCounters();
     // ─────────────────────────────────────────────────────────
-  });
+  }
+
+  // Execute immediately if DOM is already parsed, or wait for DOMContentLoaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+  } else {
+    initApp();
+  }
 })();

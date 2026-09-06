@@ -8,21 +8,91 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/legal.css">
   <link rel="icon" type="image/png" href="assets/icons/logo.png">
+    <script src="js/translations.js"></script>
   <script>
     (function(){
       try {
-        var s = localStorage.getItem("fridos_lang");
-        var l = s;
-        if (!l || (l !== "fr" && l !== "tr" && l !== "en")) {
-          var langs = navigator.languages || [navigator.language || ""];
-          for (var i = 0; i < langs.length; i++) {
-            var c = (langs[i] || "").toLowerCase().split("-")[0].trim();
-            if (c === "fr" || c === "tr" || c === "en") { l = c; break; }
+        function detectLang() {
+          try {
+            var p = new URLSearchParams(window.location.search);
+            var q = p.get("lang");
+            if (q) {
+              q = q.toLowerCase().trim();
+              if (q === "fr" || q === "tr" || q === "en") return q;
+            }
+          } catch(e) {}
+
+          try {
+            var manual = localStorage.getItem("fridos_manual_lang");
+            if (manual && (manual === "fr" || manual === "tr" || manual === "en")) {
+              return manual;
+            }
+          } catch(e) {}
+
+          try { localStorage.removeItem("fridos_lang"); } catch(e) {}
+
+          var candidates = [];
+          if (Array.isArray(navigator.languages)) {
+            candidates = candidates.concat(navigator.languages);
           }
-          if (!l) l = "en";
+          if (navigator.language) candidates.push(navigator.language);
+          if (navigator.userLanguage) candidates.push(navigator.userLanguage);
+          if (navigator.browserLanguage) candidates.push(navigator.browserLanguage);
+
+          for (var i = 0; i < candidates.length; i++) {
+            var raw = candidates[i];
+            if (!raw || typeof raw !== "string") continue;
+            var code = raw.toLowerCase().split("-")[0].split("_")[0].trim();
+            if (code === "fr") return "fr";
+            if (code === "tr") return "tr";
+            if (code === "en") return "en";
+          }
+
+          return "en";
         }
+
+        var l = detectLang();
         document.documentElement.lang = l;
         window.__FRIDOS_INITIAL_LANG__ = l;
+
+        if (l !== "tr" && window.FRIDOS_TRANSLATIONS && window.FRIDOS_TRANSLATIONS[l]) {
+          var dict = window.FRIDOS_TRANSLATIONS[l];
+          function translateEl(el) {
+            var key = el.getAttribute("data-i18n");
+            if (!key) return;
+            var parts = key.split(".");
+            var val = dict;
+            for (var k = 0; k < parts.length; k++) {
+              if (val && val[parts[k]] !== undefined) val = val[parts[k]];
+              else { val = null; break; }
+            }
+            if (typeof val === "string") {
+              if (el.getAttribute("data-i18n-html") === "true") {
+                el.innerHTML = val;
+              } else {
+                el.textContent = val;
+              }
+            }
+          }
+
+          if (window.MutationObserver) {
+            var obs = new MutationObserver(function(mutations) {
+              for (var i = 0; i < mutations.length; i++) {
+                var added = mutations[i].addedNodes;
+                for (var j = 0; j < added.length; j++) {
+                  var node = added[j];
+                  if (node.nodeType === 1) {
+                    if (node.hasAttribute("data-i18n")) translateEl(node);
+                    var children = node.querySelectorAll("[data-i18n]");
+                    for (var c = 0; c < children.length; c++) translateEl(children[c]);
+                  }
+                }
+              }
+            });
+            obs.observe(document.documentElement, { childList: true, subtree: true });
+            window.__FRIDOS_OBS__ = obs;
+          }
+        }
       } catch(e) {}
     })();
   </script>
@@ -1276,7 +1346,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
