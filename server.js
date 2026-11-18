@@ -8,8 +8,35 @@ const http = require('http');
 const fs   = require('fs');
 const path = require('path');
 
+function loadLocalEnv() {
+  const envPath = path.join(__dirname, '.env');
+  if (!fs.existsSync(envPath)) return;
+
+  for (const line of fs.readFileSync(envPath, 'utf8').split(/\r?\n/)) {
+    const match = line.match(/^\s*([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)\s*$/);
+    if (match && process.env[match[1]] === undefined) {
+      process.env[match[1]] = match[2].replace(/^(['"])(.*)\1$/, '$2');
+    }
+  }
+}
+
+loadLocalEnv();
+
 const PORT   = process.env.PORT || 3000;
 const PUBLIC = path.join(__dirname, 'public'); // ← webroot
+const posthogConfig = {
+  token: process.env.POSTHOG_PROJECT_TOKEN,
+  host: process.env.POSTHOG_HOST,
+  isDevelopment: process.env.NODE_ENV !== 'production',
+};
+
+if (!posthogConfig.token && process.env.NODE_ENV !== 'production') {
+  console.warn('POSTHOG_PROJECT_TOKEN variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once POSTHOG_PROJECT_TOKEN is configured');
+}
+
+if (!posthogConfig.host && process.env.NODE_ENV !== 'production') {
+  console.warn('POSTHOG_HOST variable required by PostHog is missing or un-configured, this causes events to be silently missed. This error stops appearing once POSTHOG_HOST is configured');
+}
 
 // ── ANSI colors ──────────────────────────────────────────────────────────────
 const C = {
@@ -49,6 +76,17 @@ const server = http.createServer((req, res) => {
   const t0  = Date.now();
   let   url = req.url.split('?')[0].split('#')[0];
   if (url === '/' || url === '') url = '/index.html';
+
+  if (url === '/posthog-config.js') {
+    res.writeHead(200, {
+      'Content-Type': 'application/javascript; charset=utf-8',
+      'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+    });
+    res.end(`window.__FRIDOS_POSTHOG_CONFIG__ = ${JSON.stringify(posthogConfig)};`);
+    log(200, req.method, url, Date.now() - t0);
+    return;
+  }
 
   const filePath = path.normalize(path.join(PUBLIC, url));
 

@@ -52,11 +52,28 @@
 
   let currentLang = window.__FRIDOS_INITIAL_LANG__ || detectDeviceLanguage();
 
+  function capturePosthog(event, properties) {
+    if (window.posthog && typeof window.posthog.capture === 'function') {
+      window.posthog.capture(event, properties);
+    }
+  }
+
+  function logPosthog(message, attributes) {
+    if (window.posthog && window.posthog.logger && typeof window.posthog.logger.info === 'function') {
+      window.posthog.logger.info(message, attributes);
+    }
+  }
+
   function setLanguage(lang, isExplicitUserClick = false) {
     if (!window.FRIDOS_TRANSLATIONS || !window.FRIDOS_TRANSLATIONS[lang]) return;
     currentLang = lang;
     if (isExplicitUserClick) {
       try { localStorage.setItem('fridos_manual_lang', lang); } catch(e) {}
+      capturePosthog('language_selected', { selected_language: lang });
+      logPosthog('marketing interaction completed', {
+        interaction: 'language_selection',
+        selected_language: lang,
+      });
     }
     document.documentElement.lang = lang;
 
@@ -230,7 +247,39 @@
     if (swapBtn) {
       swapBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.swapRecipeCards();
+        capturePosthog('recipe_showcase_swapped');
+        logPosthog('marketing interaction completed', {
+          interaction: 'recipe_showcase_swap',
+        });
+      });
+    }
+
+    document.querySelectorAll('.store-btn--apple').forEach((button) => {
+      button.addEventListener('click', () => {
+        const placement = button.closest('.cta-banner-wrap') ? 'final_cta' : 'hero';
+        capturePosthog('app_store_download_clicked', { placement: placement });
+        logPosthog('marketing interaction completed', {
+          interaction: 'app_store_download_click',
+          placement: placement,
+        });
+      });
+    });
+
+    document.querySelectorAll('.store-btn--google').forEach((button) => {
+      button.addEventListener('click', () => {
+        const placement = button.closest('.cta-banner-wrap') ? 'final_cta' : 'hero';
+        capturePosthog('google_play_download_clicked', { placement: placement });
+        logPosthog('marketing interaction completed', {
+          interaction: 'google_play_download_click',
+          placement: placement,
+        });
+      });
+    });
+
+    const deleteEmailBtn = document.getElementById('deleteEmailBtn');
+    if (deleteEmailBtn) {
+      deleteEmailBtn.addEventListener('click', () => {
+        capturePosthog('account_deletion_email_started');
       });
     }
 
